@@ -9,8 +9,8 @@ const basePath = env.BASE;
 
 // https://astro.build/config
 export default defineConfig({
-	site: siteUrl || 'https://rockem.github.io',
-	base: basePath ?? 'my-photography-portfolio/',
+	site: siteUrl || 'https://scricciolo.wuaze.com/',
+	base: basePath ?? '/',
 	vite: {
 		plugins: [tailwindcss()],
 	},
