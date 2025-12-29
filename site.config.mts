@@ -8,19 +8,19 @@ export interface SocialLink {
 }
 
 export default {
-	title: 'ES',
+	title: 'BC',
 	favicon: 'favicon.ico',
-	owner: 'Eli Segal',
-	profileImage: 'profile-2.webp',
+	owner: 'Brave Commanders',
+	profileImage: 'captain.jpg',
 	socialLinks: [
 		{
 			name: 'GitHub',
-			url: 'https://github.com/rockem',
+			url: 'https://github.com/marpal71',
 			icon: Github,
 		} as SocialLink,
 		{
 			name: 'Instagram',
-			url: 'https://www.instagram.com/lesegal/',
+			url: 'https://www.instagram.com/',
 			icon: Instagram,
 		} as SocialLink,
 	],

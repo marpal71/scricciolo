@@ -1,20 +1,20 @@
 ---
-title: About me
+title: About us
 ---
 
-### Hi, I'm Eli 👋
+### CHI SIAMO 👋
 
-I'm a software architect lead based in Israel.
-I’m married to Liat, and together we’re raising our two wonderful kids, Ory and Shira.
-Photography is my way of capturing the beauty in everyday life — especially the candid, unplanned moments that tell real stories.
-I’m drawn to minimalism and aim for clean compositions with a clear subject and a sense of calm.
-Beyond photography, I’m also a singer-songwriter, skateboarder and love to play skill toys like Kendama and Yoyo.
+Siamo uniti dall’amore profondo per il mare e dalla volontà di viverlo e condividerlo nel modo più autentico
 
-#### My Gear
+La nostra forza è la competenza e la profonda conoscenza del territorio, delle rotte, dei venti e dei ritmi del mare. Ogni uscita è pensata per essere sicura, curata nei dettagli e adattata alle esigenze di chi sceglie di navigare con noi.
 
-- Leica Q3(28)
-- Ricoh GR IIIx
+Il cuore della nostra esperienza è la nostra imbarcazione, un Atlantis 39, elegante, performante e confortevole, ideale per vivere il mare in totale relax senza rinunciare allo stile e alla qualità. A bordo, ogni ospite può sentirsi parte di un viaggio esclusivo, immerso in scenari di rara bellezza.
+
+Navighiamo tra gli incantevoli luoghi della Riviera di Ulisse, lungo la costa laziale, e le affascinanti Isole Pontine, dove acque cristalline, fondali trasparenti e coste mozzafiato raccontano una storia millenaria fatta di natura, mito e cultura marinara.
+
+Rispetto, cultura, responsabilità e amore per la navigazione sono i valori che guidano ogni nostra scelta, dentro e fuori dall’acqua.
+
 
 ---
 
-If you want to build a site like this, you can use the [Photography Portfolio AstroJS template](https://astro.build/themes/details/photography-portfolio-template/) I created for it.
+
