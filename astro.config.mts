@@ -9,7 +9,7 @@ const basePath = env.BASE;
 
 // https://astro.build/config
 export default defineConfig({
-	site: siteUrl || 'https://scricciolo.netlify.app/',
+	site: siteUrl || 'https://scricciolo3.netlify.app/',
 	//site: siteUrl || 'https://scricciolo.wuaze.com/',
 	base: basePath ?? '/',
 	vite: {
