@@ -1,122 +1,104 @@
 collections:
-  - id: landscape
-    name: Landscape
-  - id: street
-    name: Street
-  - id: nature
-    name: Nature
-  - id: places
-    name: Places
+  - id: ponza
+    name: Ponza
+  - id: ventotene
+    name: Ventotene
+  - id: palmarola
+    name: Palmarola
   - id: portrait
-    name: Portrait
-  - id: moments
-    name: Little Moments
+    name: Ritratti
+  - id: scricciolo
+    name: Scricciolo
+  - id: locandine
+    name: Locandina
 images:
-  - path: nature/L1002616.jpg
+  - path: locandine/LocandinaSenzaPrezzo.jpg
     meta:
-      title: L1002616
+      title: ''
       description: ''
       collections:
-        - nature
-    exif:
-      captureDate: 2025-04-23T15:16:23.000Z
-      fNumber: 8
-      focalLength: 28
-      iso: 100
-      model: LEICA Q3
-      shutterSpeed: 500
-      lensModel: SUMMILUX 1:1.7/28 ASPH.
-  - path: landscape/L1002654.jpg
+        - featured    
+  - path: ponza/ponza.jpg
     meta:
-      title: L1002654
+      title: ''
+      description: 'Baia'
+      collections:
+        - ponza
+  - path: scricciolo/frigoInterno.jpg
+    meta:
+      title: ''
+      description: 'Frigo'
+      collections:
+        - scricciolo                
+  - path: scricciolo/letto.jpg
+    meta:
+      title: 'ScriccioleIII'
+      description: 'Letto'
+      collections:
+        - scricciolo
+  - path: scricciolo/cucina.jpg
+    meta:
+      title: ''
+      description: 'Cucina'
+      collections:
+        - scricciolo       
+  - path: scricciolo/dinette.jpg
+    meta:
+      title: 'ScriccioleIII'
+      description: 'Dinette'
+      collections:
+        - scricciolo      
+  - path: scricciolo/dinette2.jpg
+    meta:
+      title: ''
+      description: 'Dinette'
+      collections:
+        - scricciolo                  
+  - path: scricciolo/dinette3.jpg
+    meta:
+      title: 'ScriccioleIII'
+      description: 'Dinette'
+      collections:
+        - scricciolo
+  - path: scricciolo/dinette4.jpg
+    meta:
+      title: ''
+      description: 'Dinette'
+      collections:
+        - scricciolo               
+  - path: scricciolo/dinetteEsterna.jpg
+    meta:
+      title: ''
+      description: 'Dinette esterna'
+      collections:
+        - scricciolo       
+  - path: scricciolo/dinetteInterna.jpg
+    meta:
+      title: ''
+      description: 'Dinette interna'
+      collections:
+        - scricciolo                 
+
+  - path: scricciolo/barca.jpg
+    meta:
+      title: 'ScriccioleIII'
+      description: ScriccioloIII
+      collections:
+        - scricciolo
+        - featured        
+  - path: ventotene/ventotene.jpg
+    meta:
+      title: Ventotene
+      description: isola di 
+        <b>Ventotene</b><br>aaaaa.<br>bbb
+      collections:
+        - ventotene
+  - path: palmarola/Palmarola.jpg
+    meta:
+      title: palmarola
       description: ''
       collections:
-        - landscape
-    exif:
-      captureDate: 2025-08-19T21:31:05.000Z
-      fNumber: 1.7
-      focalLength: 28
-      iso: 100
-      model: LEICA Q3
-      shutterSpeed: 0.03333333333333333
-      lensModel: SUMMILUX 1:1.7/28 ASPH.
-  - path: portrait/L1001182.jpg
-    meta:
-      title: L1001182
-      description: ''
-      collections:
-        - portrait
-    exif:
-      captureDate: 2025-06-12T18:33:35.000Z
-      fNumber: 1.7
-      focalLength: 28
-      iso: 100
-      model: LEICA Q3
-      shutterSpeed: 400
-      lensModel: SUMMILUX 1:1.7/28 ASPH.
-  - path: places/L1003068.jpg
-    meta:
-      title: L1003068
-      description: ''
-      collections:
-        - places
-    exif:
-      captureDate: 2025-09-04T15:30:31.000Z
-      fNumber: 8
-      focalLength: 28
-      iso: 3200
-      model: LEICA Q3
-      shutterSpeed: 25
-      lensModel: SUMMILUX 1:1.7/28 ASPH.
-  - path: street/L1000150.jpg
-    meta:
-      title: Bring them home
-      description: >-
-        <b>Bring them home</b><br>On October 7, 2023, Hamas launched a brutal
-        attack on Israel, breaking the ceasefire and murdering over 1,200
-        civilians in their homes.<br>On that same day, 251 people were kidnapped
-        and taken hostage. This photo captures one of the many ways people in
-        Israel are acting to demand the release of the hostages and bring them
-        home.
-      collections:
-        - street
-    exif:
-      captureDate: 2025-01-01T17:00:10.000Z
-      fNumber: 2.8
-      focalLength: 28
-      iso: 2500
-      model: LEICA Q3
-      shutterSpeed: 250
-      lensModel: SUMMILUX 1:1.7/28 ASPH.
-  - path: nature/_MG_8056.jpg
-    meta:
-      title: ' Mg 8056'
-      description: ''
-      collections:
-        - nature
-        - featured
-    exif:
-      captureDate: 2017-08-18T06:50:51.000Z
-      fNumber: 9
-      focalLength: 135
-      iso: 400
-      model: Canon EOS 700D
-      shutterSpeed: 30
-      lensModel: EF-S18-135mm f/3.5-5.6 IS STM
-  - path: places/IMG_3771.jpg
-    meta:
-      title: Img 3771
-      description: ''
-      collections:
-        - places
-    exif:
-      captureDate: 2022-05-14T12:20:55.000Z
-      fNumber: 8
-      focalLength: 35
-      iso: 3200
-      model: Canon EOS 6D Mark II
-      shutterSpeed: 160
-      lensModel: EF35mm f/2 IS USM
+        - palmarola
   - path: portrait/_MG_7296.jpg
     meta:
       title: ' Mg 7296'
@@ -131,59 +113,3 @@ images:
       model: Canon EOS 700D
       shutterSpeed: 60
       lensModel: EF-S18-135mm f/3.5-5.6 IS STM
-  - path: moments/DSCF1308.jpg
-    meta:
-      title: Dscf1308
-      description: ''
-      collections:
-        - moments
-    exif:
-      captureDate: 2023-03-04T16:41:32.000Z
-      fNumber: 2
-      focalLength: 23
-      iso: 320
-      model: X100V
-      shutterSpeed: 1500
-  - path: moments/L1002562.jpg
-    meta:
-      title: L1002562
-      description: ''
-      collections:
-        - moments
-    exif:
-      captureDate: 2025-04-19T11:20:32.000Z
-      fNumber: 4
-      focalLength: 28
-      iso: 100
-      model: LEICA Q3
-      shutterSpeed: 2000
-      lensModel: SUMMILUX 1:1.7/28 ASPH.
-  - path: landscape/R0000328.jpg
-    meta:
-      title: R0000328
-      description: ''
-      collections:
-        - landscape
-        - featured
-    exif:
-      captureDate: 2025-11-08T12:05:56.000Z
-      fNumber: 8
-      focalLength: 26
-      iso: 160
-      model: RICOH GR IIIx
-      shutterSpeed: 500
-      lensModel: GR LENS 26mm F2.8
-  - path: street/IMG_2827.jpeg
-    meta:
-      title: Img 2827
-      description: ''
-      collections:
-        - street
-    exif:
-      captureDate: 2022-11-23T08:56:53.000Z
-      fNumber: 1.5
-      focalLength: 5.7
-      iso: 50
-      model: iPhone 13 Pro Max
-      shutterSpeed: 2299
-      lensModel: iPhone 13 Pro Max back triple camera 5.7mm f/1.5
