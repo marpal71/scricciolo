@@ -12,6 +12,7 @@ collections:
   - id: locandine
     name: Locandina
 images:
+
   - path: locandine/LocandinaSenzaPrezzo.jpg
     meta:
       title: ''
