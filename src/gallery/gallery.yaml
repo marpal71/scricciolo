@@ -5,14 +5,16 @@ collections:
     name: Ventotene
   - id: palmarola
     name: Palmarola
-  - id: portrait
-    name: Ritratti
   - id: scricciolo
     name: Scricciolo
-  - id: locandine
-    name: Locandina
 images:
-
+  - path: scricciolo/prua.jpg
+    meta:
+      title: 'ScriccioleIII'
+      description: 'prua'
+      collections:
+        - scricciolo
+        - featured  
   - path: locandine/LocandinaSenzaPrezzo.jpg
     meta:
       title: ''
@@ -25,12 +27,12 @@ images:
       description: 'Baia'
       collections:
         - ponza
-  - path: scricciolo/frigoInterno.jpg
+  - path: scricciolo/barca.jpg
     meta:
-      title: ''
-      description: 'Frigo'
+      title: 'ScriccioleIII'
+      description: ScriccioloIII
       collections:
-        - scricciolo                
+        - featured              
   - path: scricciolo/letto.jpg
     meta:
       title: 'ScriccioleIII'
@@ -66,7 +68,13 @@ images:
       title: ''
       description: 'Dinette'
       collections:
-        - scricciolo               
+        - scricciolo      
+  - path: scricciolo/frigoInterno.jpg
+    meta:
+      title: ''
+      description: 'Frigo'
+      collections:
+        - scricciolo                       
   - path: scricciolo/dinetteEsterna.jpg
     meta:
       title: ''
@@ -79,14 +87,6 @@ images:
       description: 'Dinette interna'
       collections:
         - scricciolo                 
-
-  - path: scricciolo/barca.jpg
-    meta:
-      title: 'ScriccioleIII'
-      description: ScriccioloIII
-      collections:
-        - scricciolo
-        - featured        
   - path: ventotene/ventotene.jpg
     meta:
       title: Ventotene
@@ -100,17 +100,17 @@ images:
       description: ''
       collections:
         - palmarola
-  - path: portrait/_MG_7296.jpg
-    meta:
-      title: ' Mg 7296'
-      description: ''
-      collections:
-        - portrait
-    exif:
-      captureDate: 2017-07-07T11:42:20.000Z
-      fNumber: 4.5
-      focalLength: 42
-      iso: 100
-      model: Canon EOS 700D
-      shutterSpeed: 60
-      lensModel: EF-S18-135mm f/3.5-5.6 IS STM
+  # - path: portrait/_MG_7296.jpg
+  #   meta:
+  #     title: ' Mg 7296'
+  #     description: ''
+  #     collections:
+  #       - portrait
+  #   exif:
+  #     captureDate: 2017-07-07T11:42:20.000Z
+  #     fNumber: 4.5
+  #     focalLength: 42
+  #     iso: 100
+  #     model: Canon EOS 700D
+  #     shutterSpeed: 60
+  #     lensModel: EF-S18-135mm f/3.5-5.6 IS STM

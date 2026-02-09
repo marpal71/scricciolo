@@ -1,4 +1,4 @@
----
+--- 
 import PhotoGrid from './PhotoGrid.astro';
 import { featuredCollectionId, getImages } from '../data/imageStore';
 
@@ -9,9 +9,20 @@ const images = await getImages({
 });
 ---
 
-<!-- <div class="max-w-2xl mx-auto text-center mb-16">
-	<p class="text-gray-600">Best of Gallery</p>
-</div> -->
-<div class="p-4">
-	<PhotoGrid images={images} />
+<div class="bg-slate-50 py-20" id="gallery">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-sky-950 mb-4">
+                La Tua Fuga su Misura
+            </h2>
+            <p class="text-lg text-slate-600">
+                Vivi un'esperienza unica a bordo del nostro Atlantis 39. Comfort, stile e panorami mozzafiato si fondono per creare ricordi indimenticabili. Che tu desideri una giornata di puro relax o un'avventura tra le isole, abbiamo la soluzione perfetta per te.
+            </p>
+            <div class="w-24 h-1 bg-sky-500 mx-auto mt-6 rounded-full"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto p-4 bg-white rounded-2xl shadow-lg">
+            <PhotoGrid images={images} />
+        </div>
+    </div>
 </div>

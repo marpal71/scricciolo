@@ -8,7 +8,8 @@ export interface SocialLink {
 }
 
 export default {
-	title: 'BC',
+	title: 'The Brave Commanders',
+	description: 'The Brave Commanders',
 	favicon: 'favicon.ico',
 	owner: 'Brave Commanders',
 	profileImage: 'captain.jpg',

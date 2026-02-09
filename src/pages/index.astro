@@ -3,8 +3,27 @@ import MainLayout from '../layouts/MainLayout.astro';
 import LandingHero from '../components/LandingHero-2.astro';
 import FeaturedGallery from '../components/FeaturedGallery.astro';
 import FeaturedWorkScroll from '../components/FeaturedWorkScroll.astro';
-import { Content as AboutPage } from '../content/about1.md';
 const base = import.meta.env.BASE_URL;
+const features = [
+{
+	title: "Relax Totale",
+	description: "Dimentica la folla e il rumore delle spiagge affollate. Qui ci siete solo tu, il rumore del mare e il silenzio. Riconnettiti con la natura in totale privacy.",
+	image: "images/ragazza.jpg",
+	alt: "Ragazza che prende il sole in barca"
+},
+{
+	title: "Itinerari Segreti",
+	description: "Ti porterò nelle calette accessibili solo via mare che le guide turistiche non conoscono. Scopri grotte nascoste e piscine naturali tra Gaeta e Ponza.",
+	image: "images/palm_grottaDellaCattedrale.jpg",
+	alt: "Grotta marina e acqua cristallina"
+},
+{
+	title: "All-Inclusive & Zero Stress",
+	description: "Skipper esperto, aperitivo a bordo con prodotti locali e attrezzatura snorkeling inclusa. Tu sali a bordo e pensi solo a divertirti, al resto pensiamo noi.",
+	image: "images/aperitivo.jpg",
+	alt: "Aperitivo in barca al tramonto"
+}
+];
 ---
 
 <MainLayout>
@@ -12,80 +31,125 @@ const base = import.meta.env.BASE_URL;
 		<LandingHero />
 		<FeaturedWorkScroll />
 	</section>
-
-	<section class="py-20">
-		<div class="container-custom">
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-				<div class="prose text-gray-700 mb-6">
-					<h2 class="text-3xl font-bold mb-4">About the Captains 👋</h2>
-						<AboutPage />
-				</div>
-				<div>
-					<img
-						src=`${base}images/captain.jpg`
-						alt="Captain"
-						class="w-full h-auto rounded-lg shadow-lg border-8 my-4 border-white md:p-4 transform transition hover:scale-[1.02] duration-300"
-						width="720"
-						height="720"
-					/>
-				</div>
+	
+	<section class="py-20 bg-slate-50" id="esperienza">
+		<div class="container mx-auto px-4 md:px-6">
+			<div class="text-center max-w-3xl mx-auto mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-sky-950 mb-4">
+					Il mare come non l'hai mai vissuto
+				</h2>
+				<p class="text-lg text-slate-600">
+					Non offriamo solo un passaggio in barca, ma un'esperienza sensoriale completa lungo la Riviera di Ulisse.
+				</p>
+				<div class="w-24 h-1 bg-sky-500 mx-auto mt-6 rounded-full"></div>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+				{features.map((feature) => (
+					<div class="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 flex flex-col h-full">	
+						<div class="relative h-64 overflow-hidden">
+							<img 
+							src={feature.image} 
+							alt={feature.alt} 
+							class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+							loading="lazy"
+							/>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+						</div>
+						
+						<div class="p-8 flex-grow flex flex-col">
+							<h3 class="text-xl font-bold text-sky-900 mb-3 group-hover:text-sky-600 transition-colors">
+								{feature.title}
+							</h3>
+							<p class="text-slate-600 leading-relaxed">
+								{feature.description}
+							</p>
+						</div>	
+					</div>
+				))}
+			</div>
+				
+			<div class="text-center mt-12">
+				<a href=`${base}collections/scricciolo` class="inline-flex items-center justify-center gap-2 text-sky-900 font-semibold hover:text-sky-600 transition-colors border-b-2 border-sky-200 hover:border-sky-600 pb-1">
+					Scopri i dettagli della barca
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+					</svg>
+				</a>
 			</div>
 		</div>
 	</section>
-	
-	<section class="py-16 sm:py-24">
-		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-		  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-			
-			<div class="relative">
-			  <div class="absolute -inset-4 bg-blue-100 rounded-2xl opacity-30 blur-lg"></div>
-				<img
-					src=`${base}images/MappaFormiaGpt.jpg`
-					alt="Tragitto"
-					class="w-3/4 h-auto rounded-lg shadow-lg border-8 my-4 border-white md:p-4"
-				/>			  
-			</div>
-	  
-			<div class="flex flex-col space-y-6">
-			  <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-				Concediti un giorno senza pensieri
-			  </h2>
-			  
-			  <p class="text-lg text-gray-600 leading-relaxed">
-				Parti con la tranquillità del treno e vivi un giorno in relax pensando solo alle cose che vuoi fare.
-			  </p>
-	  
-			  <ul class="space-y-4 text-gray-600">
-				  <li class="flex items-start">
-					  <svg class="h-6 w-6 text-indigo-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-					  </svg>
-					  <span>Più serenità</span>
-				  </li>
-				  <li class="flex items-start">
-					  <svg class="h-6 w-6 text-indigo-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-					  </svg>
-					  <span>Più libertà</span>
-				  </li>
-				  <li class="flex items-start">
-					<svg class="h-6 w-6 text-indigo-600 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9h12" />
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15h12" />					</svg>
-					<span>Una splendida giornata</span>
-				</li>				  
-			  </ul>
-	  
-			  <div class="pt-4">
-				<a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150 ease-in-out shadow-sm">
-				  Prenota
+
+    <section class="py-20 bg-white" id="formia">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div class="md:order-last group">
+                    <div class="relative">
+                        <div class="absolute -inset-2 md:-inset-4 bg-sky-100 rounded-2xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
+                        <img
+                            src=`${base}images/MappaFormiaGpt.jpg`
+                            alt="Mappa del porto di Formia"
+                            class="relative w-full h-auto rounded-2xl shadow-xl border-4 border-white transition-transform duration-500 group-hover:scale-105"
+                        />
+                    </div>
+                </div>
+    
+                <div class="flex flex-col space-y-6">
+                    <p class="text-sky-600 text-center text-2xl font-bold tracking-wider uppercase">Senza Stress</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-sky-950">
+                        Raggiungici in Treno, Parti dal Cuore di Formia
+                    </h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        Lascia a casa l'auto e lo stress del traffico. La stazione di Formia è a pochi minuti dal nostro punto di imbarco. Inizia la tua giornata di mare in totale relax.
+                    </p>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-sky-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span><strong>Comodità Massima:</strong> Niente parcheggio, niente attese.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-sky-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span><strong>Inizio Immediato:</strong> Scendi dal treno e sei quasi a bordo.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-sky-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span><strong>Sostenibilità:</strong> Una scelta ecologica per goderti il mare.</span>
+                        </li>
+                    </ul>
+                    <div class="pt-4">
+                        <a href="#contatti" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-sky-600 hover:bg-sky-700 transition duration-150 ease-in-out shadow-md">
+                            Pianifica la tua gita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<section class="bg-sky-800 text-white" id="contatti">
+		<div class="container mx-auto px-4 md:px-6 py-16 text-center">
+			<h2 class="text-3xl md:text-4xl font-bold mb-4">
+				Pronto a Salpare con Noi?
+			</h2>
+			<p class="text-lg text-sky-200 max-w-2xl mx-auto mb-8">
+				Contattaci per personalizzare la tua escursione o per richiedere maggiori informazioni. La tua avventura nel blu ti aspetta.
+			</p>
+			<div class="flex justify-center items-center space-x-4">
+				<a href="mailto:mapalmerio@gmail.com" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-sky-800 bg-white hover:bg-sky-100 transition duration-150 ease-in-out shadow-lg">
+					Scrivici un'email
 				</a>
-			  </div>
+				<a href="https://wa.me/3920386967/" class="inline-flex items-center justify-center px-6 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-green-500 hover:bg-green-600 transition duration-150 ease-in-out shadow-lg">
+					Scrivici su WhatsApp
+				</a>
 			</div>
-	  
-		  </div>
 		</div>
-	  </section>
+	</section>
 
 	<section class="featured-section py-20">
 		<FeaturedGallery />
