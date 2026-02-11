@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL;
 // Funzione per leggere e parsare il file delle recensioni
 async function getReviews() {
   try {
-    const fileContent = await fs.readFile('src/content/recensioni.md', 'utf8');
+    const fileContent = await fs.readFile('src/content/recensioni.txt', 'utf8');
     const frontmatter = fileContent.split('---')[1];
     const data = yaml.load(frontmatter);
     return data.reviews;
@@ -32,7 +32,7 @@ const reviews = await getReviews();
 						<div class="absolute -inset-2 md:-inset-4 bg-sky-100 rounded-2xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
 						<img
 							src=`${base}${profileImage}`
-							alt="Lo skipper, BC"
+							alt="Gli skipper BC"
 							class="relative w-full h-auto rounded-2xl shadow-xl border-4 border-white"
 							width="720"
 							height="720"
