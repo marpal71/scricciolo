@@ -24,6 +24,20 @@ const features = [
 	alt: "Aperitivo in barca al tramonto"
 }
 ];
+const newImages = [
+    {
+        src: "images/LocandinaSenzaPrezzo.jpg",
+        alt: "Locandina con i prezzi dei tour in barca"
+    },
+    {
+        src: "images/prua.jpg",
+        alt: "Prua della barca in navigazione"
+    },
+    {
+        src: "images/barca.jpg",
+        alt: "La barca Scricciolo in mare"
+    }
+];
 ---
 
 <MainLayout>
@@ -127,6 +141,27 @@ const features = [
         </div>
     </section>
 
+	<section class="py-16 bg-slate-50" id="gallery-preview">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-sky-950 mb-4">
+                    Uno Sguardo a Bordo
+                </h2>
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    Immagina di essere qui, cullato dalle onde, con il sole sulla pelle e un panorama mozzafiato.
+                </p>
+                <div class="w-24 h-1 bg-sky-500 mx-auto mt-6 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {newImages.map((image) => (
+                    <a href={image.src} class="glightbox-preview group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-100">
+                        <img src={image.src} alt={image.alt} class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" loading="lazy" />
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+
 	<section class="bg-sky-800 text-white" id="contatti">
 		<div class="container mx-auto px-4 md:px-6 py-16 text-center">
 			<h2 class="text-3xl md:text-4xl font-bold mb-4">
@@ -150,3 +185,8 @@ const features = [
 		<FeaturedGallery />
 	</section>
 </MainLayout>
+
+<script>
+    import { setupImagePreview } from '../scripts/image-preview';
+    setupImagePreview();
+</script>
