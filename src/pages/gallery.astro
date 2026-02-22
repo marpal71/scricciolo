@@ -4,7 +4,7 @@ import { getCollections, getImages } from '../data/imageStore.ts';
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 
-const collections = await getCollections();
+const collections = (await getCollections()).filter(c => c.id !== 'scricciolo');
 
 // Build a map of collection.id -> first image's src (ImageMetadata)
 const coverEntries = await Promise.all(
