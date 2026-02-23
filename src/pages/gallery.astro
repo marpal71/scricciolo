@@ -4,6 +4,7 @@ import { getCollections, getImages } from '../data/imageStore.ts';
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 
+// const collections = await getCollections();
 const collections = (await getCollections()).filter(c => c.id !== 'scricciolo');
 
 // Build a map of collection.id -> first image's src (ImageMetadata)
@@ -27,7 +28,7 @@ const base = import.meta.env.BASE_URL;
 	<section class="py-16 pt-24">
 		<div class="container-custom">
 			<div class="mb-16 text-center">
-				<h1 class="text-4xl md:text-5xl font-bold mb-4">Gallery</h1>
+				<h1 class="text-4xl md:text-5xl font-bold mb-4">Itinerari</h1>
 			</div>
 
 			<div class="flex justify-center mb-10">

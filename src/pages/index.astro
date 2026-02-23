@@ -46,7 +46,7 @@ const newImages = [
 		<!-- <FeaturedWorkScroll /> -->
 	</section>
 	
-	<section class="pb-5 pt-1 bg-slate-50" id="esperienza">
+	<section class="pb-10 pt-1 bg-slate-50" id="esperienza">
 		<div class="container mx-auto px-4 md:px-6">
 			<div class="text-center max-w-3xl mx-auto mb-16">
 				<h2 class="text-3xl md:text-4xl font-bold text-sky-950 mb-4">
@@ -84,7 +84,7 @@ const newImages = [
 			</div>
 				
 			<div class="text-center mt-16">
-				<a href=`${base}collections/scricciolo` class="inline-flex items-center justify-center gap-2 text-sky-900 font-semibold hover:text-sky-600 transition-colors duration-300 border-b-2 border-sky-200 hover:border-sky-600 pb-1">
+				<a href=`${base}collections/scricciolo` class="text-2xl inline-flex items-center justify-center gap-2 text-sky-900 font-semibold hover:text-sky-600 transition-colors duration-300 border-b-2 border-sky-200 hover:border-sky-600 pb-1">
 					Scopri i dettagli della barca
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
@@ -141,27 +141,10 @@ const newImages = [
         </div>
     </section>
 
-	<section class="py-16 bg-slate-50" id="gallery-preview">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-sky-950 mb-4">
-                    Uno Sguardo a Bordo
-                </h2>
-                <p class="text-lg text-slate-700 leading-relaxed">
-                    Immagina di essere qui, cullato dalle onde, con il sole sulla pelle e un panorama mozzafiato.
-                </p>
-                <div class="w-24 h-1 bg-sky-500 mx-auto mt-6 rounded-full"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {newImages.map((image) => (
-                    <a href={image.src} class="glightbox-preview group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-100">
-                        <img src={image.src} alt={image.alt} class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" loading="lazy" />
-                    </a>
-                ))}
-            </div>
-        </div>
-    </section>
-
+	<section class="featured-section py-5 bg-slate-50">
+		<FeaturedGallery />
+	</section>
+	
 	<section class="bg-sky-800 text-white" id="contatti">
 		<div class="container mx-auto px-4 md:px-6 py-16 text-center">
 			<h2 class="text-3xl md:text-4xl font-bold mb-4">
@@ -181,9 +164,6 @@ const newImages = [
 		</div>
 	</section>
 
-	<section class="featured-section py-24 bg-slate-50">
-		<FeaturedGallery />
-	</section>
 </MainLayout>
 
 <script>
