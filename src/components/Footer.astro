@@ -11,10 +11,29 @@ const owner = siteConfig.owner;
 <footer class="py-10 border-t border-gray-100 mt-auto">
 	<div class="container mx-auto">
 		<div class="flex flex-col md:flex-row justify-between items-center">
-			<div class="text-base font-sans text-gray-500 mb-4 md:mb-0">
-				© {year}
-				{owner}. All rights reserved.
-			</div>
+
+            <div class="text-left text-gray-600">
+                <div class="flex items-center justify-start mb-2">
+                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <p class="text-base">Licenza di Navigazione</p>
+                </div>
+            
+				<div class="flex items-center justify-start mb-2">
+                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <p class="text-base">Ceritificato si sicurezza</p>
+                </div>
+            
+				<div class="flex items-center justify-start mb-2">
+                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <p class="text-base">VHF di bordo</p>
+                </div>
+
+				<div class="flex items-center justify-start">
+                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <p class="text-base">Skipper qualificati</p>
+                </div>
+				
+            </div>
 
 			<div class="text-l font-sans">
                 <a href="https://maps.app.goo.gl/Bjtb42NRqU43C2Jv9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-48 bg-gray-800 text-white font-bold py-2 px-4 rounded-full hover:bg-gray-700 transition duration-300 ease-in-out">
@@ -25,6 +44,11 @@ const owner = siteConfig.owner;
                     <span>Dove Siamo</span>
                 </a>
             </div>
+
+			<div class="text-base font-sans text-gray-500 mb-4 md:mb-0">
+				© {year}
+				{owner}. All rights reserved.
+			</div>
 
 			<!-- <div class="flex space-x-6">
 				{socialLinks.map((socialLink) => <SocialIcon socialLink={socialLink} />)}
