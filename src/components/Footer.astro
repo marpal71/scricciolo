@@ -8,47 +8,44 @@ const owner = siteConfig.owner;
 //const socialLinks = siteConfig.socialLinks;
 ---
 
-<footer class="py-10 border-t border-gray-100 mt-auto">
+<footer class="py-10 bg-blue-50 text-blue-800 mt-auto">
 	<div class="container mx-auto">
 		<div class="flex flex-col md:flex-row justify-between items-center">
-
-            <div class="text-left text-gray-600">
-                <div class="flex items-center justify-start mb-2">
-                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <p class="text-base">Licenza di Navigazione</p>
-                </div>
-            
-				<div class="flex items-center justify-start mb-2">
-                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <p class="text-base">Ceritificato si sicurezza</p>
-                </div>
-            
-				<div class="flex items-center justify-start mb-2">
-                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <p class="text-base">VHF di bordo</p>
-                </div>
-
-				<div class="flex items-center justify-start">
-                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <p class="text-base">Skipper qualificati</p>
-                </div>
-				
-            </div>
-
-			<div class="text-l font-sans">
-                <a href="https://maps.app.goo.gl/Bjtb42NRqU43C2Jv9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-48 bg-gray-800 text-white font-bold py-2 px-4 rounded-full hover:bg-gray-700 transition duration-300 ease-in-out">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span>Dove Siamo</span>
-                </a>
-            </div>
-
 			<div class="text-base font-sans text-gray-500 mb-4 md:mb-0">
 				© {year}
 				{owner}. All rights reserved.
 			</div>
+
+            <div class="mt-8 text-left text-gray-600">
+                <div class="flex items-center justify-start mb-2">
+                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <p class="text-base">Licenza di Navigazione</p>
+                </div>
+                <div class="flex items-center justify-start mb-2">
+                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <p class="text-base">Dotazioni e certificato di sicurezza</p>
+                </div>
+                <div class="flex items-center justify-start mb-2">
+                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <p class="text-base">Skipper esperto qualificato</p>
+                </div>
+                <div class="flex items-center justify-start mb-2">
+                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <p class="text-base">VHF di bordo e portatile</p>
+                </div>				
+            </div>
+
+			<div class="text-l font-sans">
+                <a href="https://maps.app.goo.gl/Bjtb42NRqU43C2Jv9" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500 transition duration-300 ease-in-out">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span>Molo ADG, 04023 Formia LT</span>
+                    </div>
+                </a>
+            </div>
 
 			<!-- <div class="flex space-x-6">
 				{socialLinks.map((socialLink) => <SocialIcon socialLink={socialLink} />)}
