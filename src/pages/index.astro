@@ -141,9 +141,31 @@ const newImages = [
         </div>
     </section>
 
-	<section class="featured-section py-5 bg-slate-50">
-		<FeaturedGallery />
-	</section>
+	<section class="featured-section py-16 bg-slate-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div class="h-full flex flex-col justify-center">
+                    <FeaturedGallery />
+                </div>
+                <div class="text-center group">
+                    <a href=`${base}collections/scricciolo` class="text-2xl inline-flex items-center justify-center gap-2 text-sky-900 font-semibold hover:text-sky-600 transition-colors duration-300 border-b-2 border-sky-200 hover:border-sky-600 pb-1 group">
+                        Scopri la nostra barca "Scricciolo"
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>                    
+                    <a href=`${base}collections/scricciolo` class="block w-full">
+                        <img 
+                            src=`${base}images/barca.jpg` 
+                            alt="La barca Scricciolo in navigazione" 
+                            class="rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out transform group-hover:scale-105 w-full h-auto mb-6 border-4 border-white"
+                            loading="lazy"
+                        />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 	
 	<section class="bg-sky-800 text-white" id="contatti">
 		<div class="container mx-auto px-4 md:px-6 py-16 text-center">
