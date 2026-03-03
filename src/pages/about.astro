@@ -1,8 +1,12 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { Content as AboutPage } from '../content/about.md';
+import { getEntry } from 'astro:content';
 import { promises as fs } from 'fs';
 import yaml from 'js-yaml';
+import path from 'path';
+
+const aboutEntry = await getEntry('about', 'about');
+const { Content: AboutPage } = await aboutEntry.render();
 
 const profileImage = 'images/captain.jpg';
 const base = import.meta.env.BASE_URL;
@@ -10,10 +14,12 @@ const base = import.meta.env.BASE_URL;
 // Funzione per leggere e parsare il file delle recensioni
 async function getReviews() {
   try {
-    const fileContent = await fs.readFile('src/content/recensioni.txt', 'utf8');
+    const filePath = path.join(process.cwd(), 'src', 'data', 'recensioni.txt');
+    const fileContent = await fs.readFile(filePath, 'utf8');
     const frontmatter = fileContent.split('---')[1];
+    if (!frontmatter) return [];
     const data = yaml.load(frontmatter);
-    return data.reviews;
+    return data.reviews || [];
   } catch (error) {
     console.error("Errore durante la lettura delle recensioni:", error);
     return [];

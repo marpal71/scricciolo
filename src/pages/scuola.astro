@@ -1,5 +1,12 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { getEntry } from 'astro:content';
+
+const patenteNautica = await getEntry('scuola', 'patente-nautica');
+const { Content } = await patenteNautica.render();
+
+const patenteNauticaSL = await getEntry('scuola', 'patente-nautica-sl');
+const { Content: ContentSL } = await patenteNauticaSL.render();
 ---
 
 <MainLayout title="Scuola Nautica">
@@ -18,12 +25,12 @@ import MainLayout from '../layouts/MainLayout.astro';
             <h2 class="card-title text-2xl font-bold text-gray-900">Patente Nautica entro le 12 miglia</h2>
             <p class="mt-4 text-gray-600">Il corso per la patente nautica entro le 12 miglia dalla costa è pensato per chi desidera iniziare a navigare in sicurezza, acquisendo le conoscenze fondamentali per la navigazione da diporto. Il corso si articola in lezioni teoriche e uscite in mare, per mettere in pratica le nozioni apprese.</p>
             <div class="card-actions justify-start mt-6">
-                <a href="#" class="text-base md:text-l font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
+                <button id="openModal12MBtn" class="text-base md:text-l font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
                     Scopri di più
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-2 transition-transform duration-300 group-hover:translate-x-1">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
-                </a>   
+                </button>
             </div>
           </div>
         </div>
@@ -31,14 +38,16 @@ import MainLayout from '../layouts/MainLayout.astro';
         <div class="card bg-white shadow-2xl rounded-2xl overflow-hidden group">
           <div class="card-body p-8">
             <h2 class="card-title text-2xl font-bold text-gray-900">Patente Nautica senza limiti</h2>
-            <p class="mt-4 text-gray-600">Il corso per la patente nautica senza limiti dalla costa è rivolto a chi sogna di navigare in alto mare, affrontando traversate impegnative in totale sicurezza. Il programma approfondisce tutti gli aspetti della navigazione d’altura, dalla pianificazione della rotta alla gestione delle emergenze.</p>
+            <p class="mt-4 text-gray-600">Il corso per la patente nautica senza limiti dalla costa è rivolto a chi sogna di navigare in alto mare,
+                oltrepassando il limite delle 12 miglia. Il programma approfondisce tutti gli aspetti della navigazione d’altura,
+                 padroneggiando carteggio e carte nautiche</p>
             <div class="card-actions justify-start mt-6">
-                <a href="#" class="text-base md:text-l font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
+                <button id="openModalSLBtn" class="text-base md:text-l font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
                     Scopri di più
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-2 transition-transform duration-300 group-hover:translate-x-1">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
-                </a>   
+                </button>
             </div>
           </div>
         </div>
@@ -54,8 +63,109 @@ import MainLayout from '../layouts/MainLayout.astro';
             <a href="https://wa.me/3920386967/" class="inline-flex items-center justify-center px-6 py-4 border border-transparent text-2xl font-medium rounded-lg text-white bg-green-700 hover:bg-green-800 transition duration-300 ease-in-out shadow-lg transform hover:-translate-y-1">
                 Scrivici su WhatsApp
             </a>
-        </div>        
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Modal 12 Miglia -->
+  <div id="modal12M" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full mx-4">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-bold text-gray-900">Patente Nautica entro le 12 miglia</h2>
+        <button id="closeModal12MBtn" class="text-gray-500 hover:text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="prose mt-4 max-h-[70vh] overflow-y-auto">
+        <Content />
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Senza Limiti -->
+  <div id="modalSL" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full mx-4">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-bold text-gray-900">Patente Nautica senza limiti</h2>
+        <button id="closeModalSLBtn" class="text-gray-500 hover:text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="prose mt-4 max-h-[70vh] overflow-y-auto">
+        <ContentSL />
+      </div>
+    </div>
+  </div>
+
 </MainLayout>
+
+<style>
+    .prose { max-width: none; }
+</style>
+
+<script>
+    // --- Modal Management ---
+    const modals = [
+        {
+            id: 'modal12M',
+            openBtnId: 'openModal12MBtn',
+            closeBtnId: 'closeModal12MBtn',
+        },
+        {
+            id: 'modalSL',
+            openBtnId: 'openModalSLBtn',
+            closeBtnId: 'closeModalSLBtn',
+        },
+    ];
+
+    const openModal = (modalElement) => {
+        modalElement.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = (modalElement) => {
+        modalElement.classList.add('hidden');
+        // Only re-enable scroll if all modals are hidden
+        const anyModalOpen = modals.some(m => !document.getElementById(m.id)?.classList.contains('hidden'));
+        if (!anyModalOpen) {
+            document.body.style.overflow = 'auto';
+        }
+    };
+
+    modals.forEach(({ id, openBtnId, closeBtnId }) => {
+        const modalElement = document.getElementById(id);
+        const openBtn = document.getElementById(openBtnId);
+        const closeBtn = document.getElementById(closeBtnId);
+
+        if (!modalElement || !openBtn || !closeBtn) return;
+
+        openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(modalElement);
+        });
+
+        closeBtn.addEventListener('click', () => closeModal(modalElement));
+
+        // Close modal when clicking outside of it
+        modalElement.addEventListener('click', (e) => {
+            if (e.target === modalElement) {
+                closeModal(modalElement);
+            }
+        });
+    });
+
+    // Close the topmost modal with the escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const openModals = modals.map(m => document.getElementById(m.id)).filter(m => !m.classList.contains('hidden'));
+            if (openModals.length > 0) {
+                closeModal(openModals[openModals.length - 1]); // Close the last opened modal
+            }
+        }
+    });
+</script>
