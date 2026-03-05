@@ -44,7 +44,7 @@ const base = import.meta.env.BASE_URL;
 		</div>
 	</section>
 
-	<section class="pb-10 bg-white">
+	<section class="pb-15 bg-white">
 		<div class="container mx-auto px-4 md:px-6">
 			<div class="text-center max-w-3xl mx-auto mb-16">
 				<h2 class="text-3xl md:text-4xl font-bold text-sky-950 mb-4">
@@ -61,7 +61,7 @@ const base = import.meta.env.BASE_URL;
 				<div class="bg-sky-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 flex flex-col">
 					<h3 class="text-xl font-bold text-sky-950 mb-3">Ponza: L'Isola Lunata</h3>
 					<p class="text-slate-600 flex-grow">Un tour completo dell'isola, con soste a Chiaia di Luna, alle Grotte di Pilato e ai Faraglioni della Madonna. Pranzo a bordo con prodotti tipici locali.</p>
-					<a href="#" class="group inline-flex items-center font-bold text-sky-900 hover:text-sky-600 transition-colors mt-4">
+					<a id="ponza-scopri" href="javascript:void(0);" class="group inline-flex items-center font-bold text-sky-900 hover:text-sky-600 transition-colors mt-4 cursor-pointer">
 						<span>Scopri di più</span>
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5 ml-2 transform-gpu transition-transform group-hover:translate-x-1">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -107,13 +107,30 @@ const base = import.meta.env.BASE_URL;
 	</section>
 </MainLayout>
 
-<!-- Modal -->
+<!-- Ponza Itinerary Modal -->
+<div id="ponza-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full relative mx-4">
+        <span id="close-ponza-modal" class="absolute top-2 right-4 text-gray-500 text-3xl font-bold cursor-pointer hover:text-black">&times;</span>
+        <h2 class="text-2xl font-bold text-sky-950 mb-4">Itinerario Proposto per Ponza: L'Isola Lunata</h2>
+        <div class="prose max-w-none text-slate-600 leading-relaxed">
+            <p><strong>Mattina (Ore 10:00):</strong> Partenza dal porto di Formia. Dopo circa un'ora di navigazione panoramica, arriveremo a Ponza. La nostra prima sosta sarà nella suggestiva baia di <strong>Chiaia di Luna</strong>, famosa per la sua falesia a picco sul mare. Qui potrete fare il primo bagno della giornata.</p>
+            <p><strong>Pranzo (Ore 13:00):</strong> Ci dirigeremo verso i <strong>Faraglioni della Madonna</strong>, dove getteremo l'ancora per il pranzo. Il nostro equipaggio vi delizierà con un pasto a base di prodotti tipici locali, servito a bordo in un'atmosfera unica.</p>
+            <p><strong>Pomeriggio (Ore 15:00):</strong> Il nostro tour prosegue con l'esplorazione delle antiche <strong>Grotte di Pilato</strong>, un complesso di grotte e vasche di epoca romana. Successivamente, circumnavigheremo l'isola per scoprire calette nascoste e paesaggi incantevoli, con un'altra sosta per un bagno rilassante.</p>
+            <p><strong>Sera (Ore 18:00):</strong> Inizio del viaggio di ritorno verso Formia, cullati dalle onde e con un aperitivo offerto a bordo mentre ammiriamo il tramonto.</p>
+            <hr class="my-4">
+            <p class="mt-4 text-sm text-slate-500"><em>Nota: Questo è solo un itinerario suggerito. Siamo flessibili e possiamo personalizzare la giornata in base alle condizioni meteo-marine e alle vostre preferenze.</em></p>
+        </div>
+    </div>
+</div>
+
+<!-- Image Modal -->
 <div id="image-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50 hidden">
   <span id="close-modal" class="absolute top-4 right-8 text-white text-5xl font-bold cursor-pointer">&times;</span>
   <img id="modal-image" class="max-w-full max-h-full" src="">
 </div>
 
 <script>
+  // Image Modal Script
   const clickableImage = document.getElementById('clickable-image');
   const imageModal = document.getElementById('image-modal');
   const modalImage = document.getElementById('modal-image');
@@ -133,4 +150,30 @@ const base = import.meta.env.BASE_URL;
       imageModal.style.display = 'none';
     }
   });
+
+  // Ponza Itinerary Modal Script
+  const ponzaModalButton = document.getElementById('ponza-scopri');
+  const ponzaModal = document.getElementById('ponza-modal');
+  const ponzaModalClose = document.getElementById('close-ponza-modal');
+
+  if (ponzaModalButton) {
+    ponzaModalButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      if(ponzaModal) ponzaModal.style.display = 'flex';
+    });
+  }
+
+  if (ponzaModalClose) {
+    ponzaModalClose.addEventListener('click', () => {
+      if(ponzaModal) ponzaModal.style.display = 'none';
+    });
+  }
+
+  if (ponzaModal) {
+    ponzaModal.addEventListener('click', (e) => {
+      if (e.target === ponzaModal) {
+        ponzaModal.style.display = 'none';
+      }
+    });
+  }
 </script>
