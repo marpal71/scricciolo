@@ -1,0 +1,136 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { promises as fs } from 'fs';
+import path from 'path';
+
+const profileImage = 'images/pontine.jpg';
+const base = import.meta.env.BASE_URL;
+
+---
+
+<MainLayout>
+	<section class="pt-32 pb-20 bg-slate-50">
+		<div class="container mx-auto px-4 md:px-6">
+			<div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+				<div class="lg:col-span-2">
+					<div class="relative group">
+						<div class="absolute -inset-2 md:-inset-4 bg-sky-100 rounded-2xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
+            <figure>
+						<img
+							id="clickable-image"
+							src=`${base}${profileImage}`
+							alt="Itinerari"
+							class="relative w-full h-auto rounded-2xl shadow-xl border-4 border-white cursor-pointer"
+							width="720"
+							height="720"
+						/>
+            <figcaption class="text-base">(immagine non in scala)</figcaption>
+            </figure>
+					</div>
+				</div>
+
+				<div class="lg:col-span-3 prose max-w-none text-slate-600 leading-relaxed">
+					<h1 class="text-3xl md:text-4xl font-bold text-sky-950 mb-6">
+						Esplora le Isole Pontine e la Riviera di Ulisse
+					</h1>
+					<p class="text-lg mb-4">
+						Parti per un'avventura indimenticabile alla scoperta di Ponza, Palmarola, Ventotene e della mitica Riviera di Ulisse. Le nostre escursioni giornaliere in barca da Formia ti porteranno in un viaggio attraverso acque cristalline, grotte nascoste e paesaggi mozzafiato.
+					</p>
+					<p>
+						Scegli tra i nostri itinerari personalizzati o crea la tua giornata perfetta in mare. Il nostro esperto equipaggio si prenderà cura di ogni dettaglio, garantendoti sicurezza, comfort e divertimento.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-20 bg-white">
+		<div class="container mx-auto px-4 md:px-6">
+			<div class="text-center max-w-3xl mx-auto mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-sky-950 mb-4">
+					I Nostri Itinerari
+				</h2>
+				<p class="text-lg text-slate-600">
+					Scopri le perle del Mar Tirreno con le nostre escursioni guidate.
+				</p>
+				<div class="w-24 h-1 bg-sky-500 mx-auto mt-6 rounded-full"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				
+				<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 flex flex-col">
+					<h3 class="text-xl font-bold text-sky-950 mb-3">Ponza: L'Isola Lunata</h3>
+					<p class="text-slate-600 flex-grow">Un tour completo dell'isola, con soste a Chiaia di Luna, alle Grotte di Pilato e ai Faraglioni della Madonna. Pranzo a bordo con prodotti tipici locali.</p>
+					<a href="#" class="group inline-flex items-center font-bold text-sky-900 hover:text-sky-600 transition-colors mt-4">
+						<span>Scopri di più</span>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5 ml-2 transform-gpu transition-transform group-hover:translate-x-1">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+						</svg>
+					</a>
+				</div>
+				
+				<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 flex flex-col">
+					<h3 class="text-xl font-bold text-sky-950 mb-3">Palmarola: L'Isola Selvaggia</h3>
+					<p class="text-slate-600 flex-grow">Un'esperienza unica nella riserva naturale di Palmarola. Ammira la Cattedrale, le calette incontaminate e fai snorkeling nelle acque trasparenti.</p>
+					<a href="#" class="group inline-flex items-center font-bold text-sky-900 hover:text-sky-600 transition-colors mt-4">
+						<span>Scopri di più</span>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5 ml-2 transform-gpu transition-transform group-hover:translate-x-1">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+						</svg>
+					</a>
+				</div>
+				
+				<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 flex flex-col">
+					<h3 class="text-xl font-bold text-sky-950 mb-3">Ventotene: L'Isola Romana</h3>
+					<p class="text-slate-600 flex-grow">Un tuffo nella storia e nella natura. Visita il carcere borbonico, l'antico porto romano e la Villa di Giulia. Ideale per gli amanti della cultura e del relax.</p>
+					<a href="#" class="group inline-flex items-center font-bold text-sky-900 hover:text-sky-600 transition-colors mt-4">
+						<span>Scopri di più</span>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5 ml-2 transform-gpu transition-transform group-hover:translate-x-1">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+						</svg>
+					</a>
+				</div>
+
+				<div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 flex flex-col">
+					<h3 class="text-xl font-bold text-sky-950 mb-3">Riviera di Ulisse</h3>
+					<p class="text-slate-600 flex-grow">Un tour della costa da Gaeta a Sperlonga, con le sue sette spiagge, le grotte e le ville romane. Un'esperienza che unisce mare, storia e mito.</p>
+					<a href="#" class="group inline-flex items-center font-bold text-sky-900 hover:text-sky-600 transition-colors mt-4">
+						<span>Scopri di più</span>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5 ml-2 transform-gpu transition-transform group-hover:translate-x-1">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+						</svg>
+					</a>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</MainLayout>
+
+<!-- Modal -->
+<div id="image-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50 hidden">
+  <span id="close-modal" class="absolute top-4 right-8 text-white text-5xl font-bold cursor-pointer">&times;</span>
+  <img id="modal-image" class="max-w-full max-h-full" src="">
+</div>
+
+<script>
+  const clickableImage = document.getElementById('clickable-image');
+  const imageModal = document.getElementById('image-modal');
+  const modalImage = document.getElementById('modal-image');
+  const closeModal = document.getElementById('close-modal');
+
+  clickableImage.addEventListener('click', () => {
+    modalImage.src = clickableImage.src;
+    imageModal.style.display = 'flex';
+  });
+
+  closeModal.addEventListener('click', () => {
+    imageModal.style.display = 'none';
+  });
+
+  imageModal.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+      imageModal.style.display = 'none';
+    }
+  });
+</script>
