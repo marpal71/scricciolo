@@ -1,0 +1,253 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { promises as fs } from 'fs';
+import path from 'path';
+
+const profileImage = 'images/pontine.jpg';
+const base = import.meta.env.BASE_URL;
+
+---
+
+<MainLayout>
+	<section class="pt-32 pb-20 bg-slate-50">
+		<div class="container mx-auto px-4 md:px-6">
+			<div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+				<div class="lg:col-span-2">
+					<div class="relative group">
+						<div class="absolute -inset-2 md:-inset-4 bg-sky-100 rounded-2xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
+            <figure>
+						<img
+							id="clickable-image"
+							src=`${base}${profileImage}`
+							alt="Itinerari"
+							class="relative w-full h-auto rounded-2xl shadow-xl border-4 border-white cursor-pointer"
+							width="720"
+							height="720"
+						/>
+            <figcaption class="text-base">(immagine non in scala)</figcaption>
+            </figure>
+					</div>
+				</div>
+
+				<div class="lg:col-span-3 prose max-w-none text-slate-600 leading-relaxed">
+					<h1 class="text-3xl md:text-4xl font-bold text-sky-950 mb-6">
+						Esplora le Isole Pontine e la Riviera di Ulisse
+					</h1>
+					<p class="text-lg mb-4">
+						Parti per un'avventura indimenticabile alla scoperta di Ponza, Palmarola, Ventotene e della mitica Riviera di Ulisse. Le nostre escursioni giornaliere in barca da Formia ti porteranno in un viaggio attraverso acque cristalline, grotte nascoste e paesaggi mozzafiato.
+					</p>
+					<p>
+						Scegli tra i nostri itinerari personalizzati o crea la tua giornata perfetta in mare. Il nostro esperto equipaggio si prenderà cura di ogni dettaglio, garantendoti sicurezza, comfort e divertimento.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="pb-15 bg-white">
+		<div class="container mx-auto px-4 md:px-6">
+			<div class="text-center max-w-3xl mx-auto mb-16">
+				<h2 class="text-3xl md:text-4xl font-bold text-sky-950 mb-4">
+					I Nostri Itinerari
+				</h2>
+				<p class="text-lg text-slate-600">
+					Scopri le perle del Mar Tirreno con le nostre escursioni guidate.
+				</p>
+				<div class="w-24 h-1 bg-sky-500 mx-auto mt-6 rounded-full"></div>
+			</div>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+				
+				<div class="bg-sky-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 flex flex-col">
+					<img src="/images/ponza.jpg" alt="Ponza" class="w-full h-48 object-cover rounded-lg mb-4"/>
+					<h3 class="text-xl font-bold text-sky-950 mb-3">Ponza: L'Isola Lunata</h3>
+					<p class="text-slate-600 flex-grow">Un tour completo dell'isola, con soste a Chiaia di Luna, alle Grotte di Pilato e ai Faraglioni della Madonna. Pranzo a bordo con prodotti tipici locali.</p>
+					<a id="ponza-scopri" href="javascript:void(0);" class="group inline-flex items-center font-bold text-sky-900 hover:text-sky-600 transition-colors mt-4 cursor-pointer">
+						<span>Scopri di più</span>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5 ml-2 transform-gpu transition-transform group-hover:translate-x-1">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+						</svg>
+					</a>
+				</div>
+				
+				<div class="bg-teal-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 flex flex-col">
+					<img src="/images/palmarola.jpg" alt="Palmarola" class="w-full h-48 object-cover rounded-lg mb-4"/>
+					<h3 class="text-xl font-bold text-sky-950 mb-3">Palmarola: L'Isola Selvaggia</h3>
+					<p class="text-slate-600 flex-grow">Un'esperienza unica nella riserva naturale di Palmarola. Ammira la Cattedrale, le calette incontaminate e fai snorkeling nelle acque trasparenti.</p>
+					<a id="palmarola-scopri" href="javascript:void(0);" class="group inline-flex items-center font-bold text-sky-900 hover:text-sky-600 transition-colors mt-4 cursor-pointer">
+						<span>Scopri di più</span>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5 ml-2 transform-gpu transition-transform group-hover:translate-x-1">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+						</svg>
+					</a>
+				</div>
+				
+				<div class="bg-cyan-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 flex flex-col">
+					<img src="/images/ventotene.jpg" alt="Ventotene" class="w-full h-48 object-cover rounded-lg mb-4"/>
+					<h3 class="text-xl font-bold text-sky-950 mb-3">Ventotene: L'Isola Romana</h3>
+					<p class="text-slate-600 flex-grow">Un tuffo nella storia e nella natura. Visita il carcere borbonico, l'antico porto romano e la Villa di Giulia. Ideale per gli amanti della cultura e del relax.</p>
+					<a id="ventotene-scopri" href="javascript:void(0);" class="group inline-flex items-center font-bold text-sky-900 hover:text-sky-600 transition-colors mt-4 cursor-pointer">
+						<span>Scopri di più</span>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5 ml-2 transform-gpu transition-transform group-hover:translate-x-1">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+						</svg>
+					</a>
+				</div>
+
+				<div class="bg-blue-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 flex flex-col">
+					<img src="/images/r_ulisse.jpg" alt="Riviera di Ulisse" class="w-full h-48 object-cover rounded-lg mb-4"/>
+					<h3 class="text-xl font-bold text-sky-950 mb-3">Riviera di Ulisse</h3>
+					<p class="text-slate-600 flex-grow">Un tour della costa da Gaeta a Sperlonga, con le sue sette spiagge, le grotte e le ville romane. Un'esperienza che unisce mare, storia e mito.</p>
+					<a id="ulisse-scopri" href="javascript:void(0);" class="group inline-flex items-center font-bold text-sky-900 hover:text-sky-600 transition-colors mt-4 cursor-pointer">
+						<span>Scopri di più</span>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-5 h-5 ml-2 transform-gpu transition-transform group-hover:translate-x-1">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+						</svg>
+					</a>
+				</div>
+
+			</div>
+		</div>
+	</section>
+</MainLayout>
+
+<!-- Ponza Itinerary Modal -->
+<div id="ponza-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full relative mx-4">
+        <span id="close-ponza-modal" class="absolute top-2 right-4 text-gray-500 text-3xl font-bold cursor-pointer hover:text-black">&times;</span>
+        <h2 class="text-2xl font-bold text-sky-950 mb-4">Itinerario Proposto per Ponza: L'Isola Lunata</h2>
+        <div class="prose max-w-none text-slate-600 leading-relaxed">
+            <p><strong>Mattina (Ore 10:00):</strong> Partenza dal porto di Formia. Dopo circa un'ora di navigazione panoramica, arriveremo a Ponza. La nostra prima sosta sarà nella suggestiva baia di <strong>Chiaia di Luna</strong>, famosa per la sua falesia a picco sul mare. Qui potrete fare il primo bagno della giornata.</p>
+            <p><strong>Pranzo (Ore 13:00):</strong> Ci dirigeremo verso i <strong>Faraglioni della Madonna</strong>, dove getteremo l'ancora per il pranzo. Il nostro equipaggio vi delizierà con un pasto a base di prodotti tipici locali, servito a bordo in un'atmosfera unica.</p>
+            <p><strong>Pomeriggio (Ore 15:00):</strong> Il nostro tour prosegue con l'esplorazione delle antiche <strong>Grotte di Pilato</strong>, un complesso di grotte e vasche di epoca romana. Successivamente, circumnavigheremo l'isola per scoprire calette nascoste e paesaggi incantevoli, con un'altra sosta per un bagno rilassante.</p>
+            <p><strong>Sera (Ore 18:00):</strong> Inizio del viaggio di ritorno verso Formia, cullati dalle onde e con un aperitivo offerto a bordo mentre ammiriamo il tramonto.</p>
+            <hr class="my-4">
+            <p class="mt-4 text-sm text-slate-500"><em>Nota: Questo è solo un itinerario suggerito. Siamo flessibili e possiamo personalizzare la giornata in base alle condizioni meteo-marine e alle vostre preferenze.</em></p>
+        </div>
+    </div>
+</div>
+
+<!-- Palmarola Itinerary Modal -->
+<div id="palmarola-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full relative mx-4">
+        <span id="close-palmarola-modal" class="absolute top-2 right-4 text-gray-500 text-3xl font-bold cursor-pointer hover:text-black">&times;</span>
+        <h2 class="text-2xl font-bold text-sky-950 mb-4">Itinerario Proposto per Palmarola: L'Isola Selvaggia</h2>
+        <div class="prose max-w-none text-slate-600 leading-relaxed">
+            <p><strong>Mattina (Ore 10:00):</strong> Partenza da Formia con destinazione Palmarola, l'isola più selvaggia dell'arcipelago. La navigazione ci regalerà viste spettacolari della costa.</p>
+            <p><strong>Esplorazione (Ore 11:30):</strong> Arrivati a Palmarola, la nostra prima tappa sarà la famosa <strong>"Cattedrale"</strong>, una maestosa scogliera di roccia tufacea modellata dal vento e dal mare. Successivamente, esploreremo le cale più belle come <strong>Cala Brigantina</strong> e <strong>Cala del Porto</strong>, con soste per nuotare e fare snorkeling in acque cristalline.</p>
+            <p><strong>Pranzo (Ore 13:30):</strong> Pranzo a bordo all'ancora in una delle baie più tranquille, gustando le specialità preparate dal nostro equipaggio.</p>
+            <p><strong>Pomeriggio (Ore 15:30):</strong> Continueremo il periplo dell'isola alla scoperta di grotte marine nascoste e passaggi segreti tra gli scogli. Un'avventura indimenticabile per gli amanti della natura incontaminata.</p>
+            <p><strong>Rientro (Ore 18:00):</strong> Partenza per il rientro a Formia, con un brindisi al tramonto per concludere una giornata perfetta.</p>
+            <hr class="my-4">
+            <p class="mt-4 text-sm text-slate-500"><em>Nota: L'itinerario può variare a seconda delle condizioni del mare e del vento per garantire sempre la massima sicurezza e comfort.</em></p>
+        </div>
+    </div>
+</div>
+
+<!-- Ventotene Itinerary Modal -->
+<div id="ventotene-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full relative mx-4">
+        <span id="close-ventotene-modal" class="absolute top-2 right-4 text-gray-500 text-3xl font-bold cursor-pointer hover:text-black">&times;</span>
+        <h2 class="text-2xl font-bold text-sky-950 mb-4">Itinerario Proposto per Ventotene: L'Isola Romana</h2>
+        <div class="prose max-w-none text-slate-600 leading-relaxed">
+            <p><strong>Mattina (Ore 9:30):</strong> Partenza da Formia per Ventotene. Durante il tragitto, potrete rilassarvi e godervi il panorama del Golfo di Gaeta.</p>
+            <p><strong>Visita Storica (Ore 11:00):</strong> Arrivo a Ventotene e sbarco presso l'antico <strong>Porto Romano</strong>, scavato nel tufo. Da qui, è possibile visitare il centro storico, il <strong>Museo Archeologico</strong> e i resti del <strong>carcere borbonico di Santo Stefano</strong> (visita esterna dal mare).</p>
+            <p><strong>Pranzo (Ore 13:00):</strong> Pranzo a bordo con vista sui resti della <strong>Villa di Giulia</strong>, residenza dell'esilio della figlia dell'imperatore Augusto. Un'occasione per unire storia e buona cucina.</p>
+            <p><strong>Pomeriggio (Ore 15:00):</strong> Nel pomeriggio, ci dedicheremo al relax e al mare, circumnavigando l'isola per scoprire le sue aree marine protette. Soste a <strong>Cala Nave</strong> e <strong>Parata Grande</strong> per nuotare e fare snorkeling in un ambiente ricco di biodiversità.</p>
+            <p><strong>Rientro (Ore 18:00):</strong> Partenza per il ritorno a Formia, godendo delle ultime ore di sole in mare.</p>
+            <hr class="my-4">
+            <p class="mt-4 text-sm text-slate-500"><em>Nota: Consigliamo di prenotare eventuali visite a terra in anticipo. L'itinerario è soggetto a modifiche in base alle condizioni meteo-marine.</em></p>
+        </div>
+    </div>
+</div>
+
+<!-- Riviera di Ulisse Itinerary Modal -->
+<div id="ulisse-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50 hidden">
+    <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full relative mx-4">
+        <span id="close-ulisse-modal" class="absolute top-2 right-4 text-gray-500 text-3xl font-bold cursor-pointer hover:text-black">&times;</span>
+        <h2 class="text-2xl font-bold text-sky-950 mb-4">Itinerario Proposto per la Riviera di Ulisse</h2>
+        <div class="prose max-w-none text-slate-600 leading-relaxed">
+            <p><strong>Mattina (Ore 10:00):</strong> Partenza dal porto di Formia in direzione Gaeta. La prima tappa sarà la suggestiva <strong>"Montagna Spaccata"</strong> con il suo santuario a picco sul mare e la visita via mare alla <strong>Grotta del Turco</strong>.</p>
+            <p><strong>Costa e Grotte (Ore 11:30):</strong> Navigheremo lungo la costa di Gaeta fino a Sperlonga, ammirando le <strong>Sette Spiagge</strong> e scoprendo grotte nascoste come la famosa <strong>Grotta Azzurra</strong> (condizioni meteo permettendo).</p>
+            <p><strong>Pranzo (Ore 13:30):</strong> Sosteremo per il pranzo in una delle baie più tranquille, con vista sulla splendida <strong>Villa di Tiberio</strong> a Sperlonga. Potrete gustare un pasto leggero e rinfrescante preparato a bordo.</p>
+            <p><strong>Pomeriggio (Ore 15:30):</strong> Pomeriggio dedicato a bagni e relax. Avrete l'opportunità di nuotare nelle acque cristalline della <strong>Baia dei 300 gradini</strong> o di esplorare i fondali ricchi di storia.</p>
+            <p><strong>Rientro (Ore 18:00):</strong> Rientro soft verso il porto di Formia, accompagnati da un aperitivo mentre il sole tramonta sulla Riviera di Ulisse.</p>
+            <hr class="my-4">
+            <p class="mt-4 text-sm text-slate-500"><em>Nota: Questo tour è perfetto per chi desidera combinare bellezze naturali, storia e mito in un'unica giornata. L'itinerario può essere personalizzato.</em></p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Image Modal -->
+<div id="image-modal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50 hidden">
+  <span id="close-modal" class="absolute top-4 right-8 text-white text-5xl font-bold cursor-pointer">&times;</span>
+  <img id="modal-image" class="max-w-full max-h-full" src="">
+</div>
+
+<script>
+  // Generic Modal Handling
+  function setupModal(buttonId, modalId, closeId) {
+    const modalButton = document.getElementById(buttonId);
+    const modal = document.getElementById(modalId);
+    const modalClose = document.getElementById(closeId);
+
+    if (modalButton) {
+      modalButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        if(modal) modal.style.display = 'flex';
+      });
+    }
+
+    if (modalClose) {
+      modalClose.addEventListener('click', () => {
+        if(modal) modal.style.display = 'none';
+      });
+    }
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+  }
+
+  // Setup all modals
+  setupModal('ponza-scopri', 'ponza-modal', 'close-ponza-modal');
+  setupModal('palmarola-scopri', 'palmarola-modal', 'close-palmarola-modal');
+  setupModal('ventotene-scopri', 'ventotene-modal', 'close-ventotene-modal');
+  setupModal('ulisse-scopri', 'ulisse-modal', 'close-ulisse-modal');
+
+
+  // Image Modal Script
+  const clickableImage = document.getElementById('clickable-image');
+  const imageModal = document.getElementById('image-modal');
+  const modalImage = document.getElementById('modal-image');
+  const closeModal = document.getElementById('close-modal');
+
+  if (clickableImage) {
+	  clickableImage.addEventListener('click', () => {
+		if(modalImage) modalImage.src = clickableImage.src;
+		if(imageModal) imageModal.style.display = 'flex';
+	  });
+  }
+
+
+  if (closeModal) {
+	  closeModal.addEventListener('click', () => {
+		if(imageModal) imageModal.style.display = 'none';
+	  });
+  }
+
+
+  if (imageModal) {
+	  imageModal.addEventListener('click', (e) => {
+		if (e.target === imageModal) {
+		  imageModal.style.display = 'none';
+		}
+	  });
+  }
+
+</script>
