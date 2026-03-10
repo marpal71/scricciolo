@@ -4,7 +4,7 @@ title: Patente Nautica Senza Limiti
 
 ## Requisiti
 
-Per garantire i massimi standard di preparazione e il superamento dell'esame, la frequenza è prevista unicamente in aula. La complessità del carteggio professionale richiede un affiancamento costante e prove pratiche su carta nautica, non replicabili con efficacia in modalità remota. In Brave Commanders, la sicurezza in mare inizia tra i banchi.
+Per garantire i massimi standard di preparazione e il superamento dell'esame, la frequenza è prevista unicamente in frontale. La complessità del carteggio professionale richiede un affiancamento costante e prove pratiche su carta nautica, non replicabili con efficacia in modalità remota. In Brave Commanders, la sicurezza in mare inizia tra i banchi.
 
 ## 📍 Programma Carteggio Oltre le 12 Miglia 📍
 

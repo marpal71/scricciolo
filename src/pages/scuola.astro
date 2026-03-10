@@ -13,10 +13,13 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
   <div class="bg-slate-50">
     <div class="container mx-auto px-4 py-24 sm:py-32">
       <div class="text-center">
-        <img src="/images/compass1.jpg" alt="Bussola" class="mx-auto mb-8 w-80 h-auto">
-        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Scuola Nautica</h1>
+        <div class="relative group mx-auto mb-8 w-80">
+            <div class="absolute -inset-2 md:-inset-4 bg-sky-100 rounded-2xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
+            <img src="/images/compass1.jpg" alt="Bussola" class="relative w-full h-auto rounded-2xl shadow-xl border-4 border-white">
+        </div>
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Training Nautico</h1>
         <p class="mt-6 text-lg leading-8 text-gray-600">
-          Ti prepariamo ad affrontare gli esami per il conseguimento delle patenti nautiche a vela e a motore, con e senza limiti di navigazione dalla costa. La nostra missione è formare comandanti responsabili e competenti, trasmettendo la nostra passione per il mare e per la navigazione.
+          Ti prepariamo ad affrontare gli esami per il conseguimento delle patenti nautiche con esperienza diretta al timone sia su armi velici che a motore, trasmettendo l'arte marinaresca e il rigore del Codice della Navigazione. Il percorso integra teoria e pratica, elementi indispensabili per acquisire sicurezza nelle manovre, rispetto delle procedure COLREG e una condotta responsabile in ogni condizione di mare.
         </p>
       </div>
 
@@ -24,7 +27,7 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
         <div class="card bg-sky-100 shadow-2xl rounded-2xl overflow-hidden group">
           <div class="card-body p-8">
             <h2 class="card-title text-2xl font-bold text-gray-900">Patente Nautica entro le 12 miglia</h2>
-            <p class="mt-4 text-gray-600">Il corso per la patente nautica entro le 12 miglia dalla costa è pensato per chi desidera iniziare a navigare in sicurezza, acquisendo le conoscenze fondamentali per la navigazione da diporto. Il corso si articola in lezioni teoriche e uscite in mare, per mettere in pratica le nozioni apprese.</p>
+            <p class="mt-4 text-gray-600">Pensato per chi desidera iniziare a navigare in sicurezza, acquisendo le conoscenze fondamentali per la navigazione da diporto. Teoria e uscite in mare, per mettere in pratica le nozioni apprese.</p>
             <div class="card-actions justify-start mt-6">
                 <button id="openModal12MBtn" class="text-base md:text-l font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
                     Scopri di più
@@ -39,9 +42,8 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
         <div class="card bg-teal-100 shadow-2xl rounded-2xl overflow-hidden group">
           <div class="card-body p-8">
             <h2 class="card-title text-2xl font-bold text-gray-900">Patente Nautica senza limiti</h2>
-            <p class="mt-4 text-gray-600">Il corso per la patente nautica senza limiti dalla costa è rivolto a chi sogna di navigare in alto mare,
-                oltrepassando il limite delle 12 miglia. Il programma approfondisce tutti gli aspetti della navigazione d’altura,
-                 padroneggiando carteggio e carte nautiche</p>
+            <p class="mt-4 text-gray-600">Rivolto a chi sogna di navigare in alto mare, oltrepassando il limite delle 12 miglia.
+                 Vengono approfonditi tutti gli aspetti della navigazione d’altura, padroneggiando carteggio e carte nautiche</p>
             <div class="card-actions justify-start mt-6">
                 <button id="openModalSLBtn" class="text-base md:text-l font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
                     Scopri di più

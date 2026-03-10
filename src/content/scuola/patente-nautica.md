@@ -4,7 +4,7 @@ title: Patente Nautica entro le 12 Miglia
 
 ## Requisiti
 
-Offriamo la massima flessibilità per il conseguimento della patente nautica: potrai scegliere tra la didattica frontale, caldamente raccomandata per l'interazione diretta con l'istruttore, o la formazione online assistita da supporti didattici multimediali
+Offriamo la massima flessibilità per il conseguimento della patente nautica: potrai scegliere tra la didattica frontale, caldamente raccomandata per l'interazione diretta con noi, o la formazione online assistita da supporti didattici multimediali
 
 ## 📍 Programma del corso 📍
 
