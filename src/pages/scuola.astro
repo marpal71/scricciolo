@@ -10,7 +10,7 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
 ---
 
 <MainLayout title="Scuola Nautica">
-
+  
   ---
   // Astro component section
   ---
@@ -30,7 +30,7 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
           Il mare non è solo una destinazione, ma una vocazione. Prendi il timone, senti la forza degli elementi e governa in sicurezza la tua imbarcazione.
         </p>
       </div>
-  
+      
       <!-- Images Grid -->
       <div class="grid md:grid-cols-2 gap-10 items-center mb-16">
         
@@ -43,7 +43,7 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
             <p class="text-blue-200">Domina il mare aperto con velocità e precisione.</p>
           </div>
         </div>
-  
+        
         <!-- Sailing Image -->
         <div class="group relative overflow-hidden rounded-2xl shadow-2xl">
           <img src="/images/sailing.jpg" alt="Comandante barca a vela" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
@@ -54,181 +54,200 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
           </div>
         </div>
       </div>
-  
+      
       <!-- Call to Action -->
       <div class="text-center max-w-2xl mx-auto">
-        <p class="text-lg md:text-xl text-blue-100 mb-8">
+        <p class="text-lg md:text-xl text-blue-100">
           Diventare comandante significa molto più che condurre una barca: è conoscere il mare, rispettarne le regole e vivere ogni rotta con responsabilità, passione e orgoglio.
         </p>
-        
-        <button class="bg-white text-blue-900 font-semibold px-8 py-4 rounded-full text-lg hover:bg-blue-100 transition shadow-lg">
-          Segui il tuo percorso
-        </button>
       </div>
-  
     </div>
   </section>
   
   <div class="bg-slate-50">
-    <div class="container mx-auto px-4 py-8 sm:py-12">
+    <div class="container mx-auto px-4 py-6 sm:py-10">
       <div class="text-center">
-        <p class="mt-6 text-xl font-bold text-gray-900 sm:text-2xl leading-8">
-          Il nostro metodo ti garantisce un approccio orientato al superamento degli esami della patente nautica, unito ad una
-          esperienza diretta al timone sia su armi velici che a motore; acquisirai sicurezza nelle manovre,
-          rispetto delle procedure di prevenzione degli abbordi e una condotta consapevole e responsabile in ogni condizione di mare.
-        </p>
+        <div class="relative group mx-auto mb-8 w-80">
+          <div class="absolute -inset-2 md:-inset-4 bg-sky-100 rounded-2xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
+          <img src="/images/compass1.jpg" alt="Bussola" class="relative w-full h-auto rounded-2xl shadow-xl border-4 border-white">
+        </div>          
+        <p class="mb-6 mx-10 sm:mx-50 text-2xl font-bold text-blue-900 sm:text-3xl">Il nostro metodo ti garantisce un approccio orientato al superamento degli esami. Inoltre:</p>
+        <div class="flex justify-center items-center">
+          <ul class="space-y-4 sm:text-2xl text-xl text-slate-700 font-bold">
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-sky-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Esperienza diretta al timone su armi velici e a motore.</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-sky-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Padronanza nelle manovre di ormeggio e disormeggio.</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-sky-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Rispetto delle procedure di prevenzione degli abbordi in mare.</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-6 w-6 text-sky-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Condotta consapevole e responsabile in ogni condizione di mare.</span>
+            </li>
+            
+          </ul>    
+        </div>
       </div>
-
+      
       <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
         <div class="card bg-sky-100 shadow-2xl rounded-2xl overflow-hidden group">
           <div class="card-body p-8">
-            <h2 class="card-title text-xl sm:text-2xl font-bold text-gray-900">Patente Nautica entro le 12 miglia</h2>
-            <p class="mt-4 text-gray-600">Pensato per chi desidera iniziare a navigare in sicurezza, acquisendo le conoscenze fondamentali per la navigazione da diporto. Teoria e uscite in mare, per mettere in pratica le nozioni apprese.</p>
+            <p class="card-title text-xl sm:text-2xl font-bold text-gray-900">Patente Nautica entro le 12 miglia</p>
+            <p class="mt-4 text-gray-700">Pensato per chi desidera iniziare a navigare in sicurezza, acquisendo le conoscenze fondamentali per la navigazione da diporto. Teoria e uscite in mare, per mettere in pratica le nozioni apprese.</p>
             <div class="card-actions justify-start mt-6">
-                <button id="openModal12MBtn" class="text-base md:text-l font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
-                    Scopri di più
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-2 transition-transform duration-300 group-hover:translate-x-1">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                </button>
+              <button id="openModal12MBtn" class="text-base md:text-lg font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
+                Scopri di più
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
-
+        
         <div class="card bg-teal-100 shadow-2xl rounded-2xl overflow-hidden group">
           <div class="card-body p-8">
-            <div class="relative group mx-auto mb-8 w-80">
-              <div class="absolute -inset-2 md:-inset-4 bg-sky-100 rounded-2xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
-              <img src="/images/compass1.jpg" alt="Bussola" class="relative w-full h-auto rounded-2xl shadow-xl border-4 border-white">
-            </div>    
-            <h2 class="card-title text-xl sm:text-2xl font-bold text-gray-900">Patente Nautica senza limiti</h2>
-            <p class="mt-4 text-gray-600">Rivolto a chi sogna di navigare in alto mare, oltrepassando il limite delle 12 miglia.
-                 Vengono approfonditi tutti gli aspetti della navigazione d’altura, padroneggiando carteggio e carte nautiche</p>
-            <div class="card-actions justify-start mt-6">
-                <button id="openModalSLBtn" class="text-base md:text-l font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
-                    Scopri di più
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-2 transition-transform duration-300 group-hover:translate-x-1">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
+            <p class="card-title text-xl sm:text-2xl font-bold text-gray-900">Patente Nautica senza limiti</p>
+            <p class="mt-4 text-gray-700">Rivolto a chi sogna di navigare in alto mare, oltrepassando il limite delle 12 miglia.
+              Vengono approfonditi tutti gli aspetti della navigazione d’altura, padroneggiando carteggio e carte nautiche</p>
+              <div class="card-actions justify-start mt-6">
+                <button id="openModalSLBtn" class="text-base md:text-lg font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
+                  Scopri di più
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
                 </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="text-center mt-24">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contattaci per maggiori informazioni</h2>
-        <p class="mt-4 text-lg leading-8 text-gray-600">Siamo a tua disposizione per fornirti tutti i dettagli sui nostri corsi e per rispondere a ogni tua domanda.</p>
-        <div class="mt-15 flex justify-center items-center space-x-4">
+        
+        <div class="text-center mt-24">
+      <div class="mt-15 flex justify-center items-center space-x-4">
             <a href="mailto:mapalmerio@gmail.com" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-xl font-medium rounded-lg text-white bg-sky-800 hover:bg-sky-900 transition duration-300 ease-in-out shadow-lg transform hover:-translate-y-1">
-                Scrivici un'email
+              Scrivici un'email
             </a>
             <a href="https://wa.me/3920386967/" class="inline-flex items-center justify-center px-6 py-4 border border-transparent text-xl font-medium rounded-lg text-white bg-green-700 hover:bg-green-800 transition duration-300 ease-in-out shadow-lg transform hover:-translate-y-1">
-                Scrivici su WhatsApp
+              Scrivici su WhatsApp
             </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Modal 12 Miglia -->
-  <div id="modal12M" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full mx-4">
-      <div class="flex justify-between items-center">
-        <h2 class="text-2xl font-bold text-gray-900">Patente Nautica entro le 12 miglia</h2>
-        <button id="closeModal12MBtn" class="text-gray-500 hover:text-gray-700">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="prose mt-4 max-h-[70vh] overflow-y-auto">
-        <Content />
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Senza Limiti -->
-  <div id="modalSL" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full mx-4">
-      <div class="flex justify-between items-center">
-        <h2 class="text-2xl font-bold text-gray-900">Patente Nautica senza limiti</h2>
-        <button id="closeModalSLBtn" class="text-gray-500 hover:text-gray-700">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="prose mt-4 max-h-[70vh] overflow-y-auto">
-        <ContentSL />
+    
+    <!-- Modal 12 Miglia -->
+    <div id="modal12M" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+      <div class="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full mx-4">
+        <div class="flex justify-between items-center">
+          <h2 class="text-2xl font-bold text-gray-900">Patente Nautica entro le 12 miglia</h2>
+          <button id="closeModal12MBtn" class="text-gray-500 hover:text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="prose mt-4 max-h-[70vh] overflow-y-auto">
+          <Content />
+        </div>
       </div>
     </div>
-  </div>
-
-</MainLayout>
-
-<style>
+    
+    <!-- Modal Senza Limiti -->
+    <div id="modalSL" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+      <div class="bg-white rounded-lg shadow-2xl p-8 max-w-2xl w-full mx-4">
+        <div class="flex justify-between items-center">
+          <h2 class="text-2xl font-bold text-gray-900">Patente Nautica senza limiti</h2>
+          <button id="closeModalSLBtn" class="text-gray-500 hover:text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="prose mt-4 max-h-[70vh] overflow-y-auto">
+          <ContentSL />
+        </div>
+      </div>
+    </div>
+    
+  </MainLayout>
+  
+  <style>
     .prose { max-width: none; }
-</style>
-
-<script>
+  </style>
+  
+  <script>
     // --- Modal Management ---
     const modals = [
-        {
-            id: 'modal12M',
-            openBtnId: 'openModal12MBtn',
-            closeBtnId: 'closeModal12MBtn',
-        },
-        {
-            id: 'modalSL',
-            openBtnId: 'openModalSLBtn',
-            closeBtnId: 'closeModalSLBtn',
-        },
+    {
+      id: 'modal12M',
+      openBtnId: 'openModal12MBtn',
+      closeBtnId: 'closeModal12MBtn',
+    },
+    {
+      id: 'modalSL',
+      openBtnId: 'openModalSLBtn',
+      closeBtnId: 'closeModalSLBtn',
+    },
     ];
-
+    
     const openModal = (modalElement) => {
-        modalElement.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+      modalElement.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     };
-
+    
     const closeModal = (modalElement) => {
-        modalElement.classList.add('hidden');
-        // Only re-enable scroll if all modals are hidden
-        const anyModalOpen = modals.some(m => !document.getElementById(m.id)?.classList.contains('hidden'));
-        if (!anyModalOpen) {
-            document.body.style.overflow = 'auto';
-        }
+      modalElement.classList.add('hidden');
+      // Only re-enable scroll if all modals are hidden
+      const anyModalOpen = modals.some(m => !document.getElementById(m.id)?.classList.contains('hidden'));
+      if (!anyModalOpen) {
+        document.body.style.overflow = 'auto';
+      }
     };
-
+    
     modals.forEach(({ id, openBtnId, closeBtnId }) => {
-        const modalElement = document.getElementById(id);
-        const openBtn = document.getElementById(openBtnId);
-        const closeBtn = document.getElementById(closeBtnId);
-
-        if (!modalElement || !openBtn || !closeBtn) return;
-
-        openBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal(modalElement);
-        });
-
-        closeBtn.addEventListener('click', () => closeModal(modalElement));
-
-        // Close modal when clicking outside of it
-        modalElement.addEventListener('click', (e) => {
-            if (e.target === modalElement) {
-                closeModal(modalElement);
-            }
-        });
+      const modalElement = document.getElementById(id);
+      const openBtn = document.getElementById(openBtnId);
+      const closeBtn = document.getElementById(closeBtnId);
+      
+      if (!modalElement || !openBtn || !closeBtn) return;
+      
+      openBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal(modalElement);
+      });
+      
+      closeBtn.addEventListener('click', () => closeModal(modalElement));
+      
+      // Close modal when clicking outside of it
+      modalElement.addEventListener('click', (e) => {
+        if (e.target === modalElement) {
+          closeModal(modalElement);
+        }
+      });
     });
-
+    
     // Close the topmost modal with the escape key
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const openModals = modals.map(m => document.getElementById(m.id)).filter(m => !m.classList.contains('hidden'));
-            if (openModals.length > 0) {
-                closeModal(openModals[openModals.length - 1]); // Close the last opened modal
-            }
+      if (e.key === 'Escape') {
+        const openModals = modals.map(m => document.getElementById(m.id)).filter(m => !m.classList.contains('hidden'));
+        if (openModals.length > 0) {
+          closeModal(openModals[openModals.length - 1]); // Close the last opened modal
         }
+      }
     });
-</script>
+  </script>
+  
