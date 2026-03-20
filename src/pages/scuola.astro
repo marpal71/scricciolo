@@ -10,23 +10,79 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
 ---
 
 <MainLayout title="Scuola Nautica">
-  <div class="bg-slate-50">
-    <div class="container mx-auto px-4 py-24 sm:py-32">
-      <div class="text-center">
-        <div class="relative group mx-auto mb-8 w-80">
-            <div class="absolute -inset-2 md:-inset-4 bg-sky-100 rounded-2xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
-            <img src="/images/compass1.jpg" alt="Bussola" class="relative w-full h-auto rounded-2xl shadow-xl border-4 border-white">
+
+  ---
+  // Astro component section
+  ---
+  
+  <section class="relative bg-gradient-to-b from-blue-900 via-blue-800 to-blue-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      
+      <!-- Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          Ami il mare e sogni di navigare in sicurezza e padronanza ?
+          <p class="text-yellow-300 pt-3">
+            DIVENTA COMANDANTE
+          </p>
+        </h2>
+        <p class="text-lg md:text-xl text-blue-200">
+          Il mare non è solo una destinazione, ma una vocazione. Prendi il timone, senti la forza degli elementi e governa in sicurezza la tua imbarcazione.
+        </p>
+      </div>
+  
+      <!-- Images Grid -->
+      <div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+        
+        <!-- Yacht Image -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-2xl">
+          <img src="/images/pershIng.jpg" alt="Comandante su yacht Pershing" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h3 class="text-2xl font-semibold mb-2">Potenza e Controllo</h3>
+            <p class="text-blue-200">Domina il mare aperto con velocità e precisione.</p>
+          </div>
         </div>
-        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Training Nautico</h1>
-        <p class="mt-6 text-lg leading-8 text-gray-600">
-          Ti prepariamo ad affrontare gli esami per il conseguimento delle patenti nautiche con esperienza diretta al timone sia su armi velici che a motore, trasmettendo l'arte marinaresca e il rigore del Codice della Navigazione. Il percorso integra teoria e pratica, elementi indispensabili per acquisire sicurezza nelle manovre, rispetto delle procedure COLREG e una condotta responsabile in ogni condizione di mare.
+  
+        <!-- Sailing Image -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-2xl">
+          <img src="/images/sailing.jpg" alt="Comandante barca a vela" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h3 class="text-2xl font-semibold mb-2">Armonia con il Vento</h3>
+            <p class="text-blue-200">Naviga a vele spiegate rispettando la tradizione marinaresca.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Call to Action -->
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="text-lg md:text-xl text-blue-100 mb-8">
+          Diventare comandante significa molto più che condurre una barca: è conoscere il mare, rispettarne le regole e vivere ogni rotta con responsabilità, passione e orgoglio.
+        </p>
+        
+        <button class="bg-white text-blue-900 font-semibold px-8 py-4 rounded-full text-lg hover:bg-blue-100 transition shadow-lg">
+          Segui il tuo percorso
+        </button>
+      </div>
+  
+    </div>
+  </section>
+  
+  <div class="bg-slate-50">
+    <div class="container mx-auto px-4 py-8 sm:py-12">
+      <div class="text-center">
+        <p class="mt-6 text-xl font-bold text-gray-900 sm:text-2xl leading-8">
+          Il nostro metodo ti garantisce un approccio orientato al superamento degli esami della patente nautica, unito ad una
+          esperienza diretta al timone sia su armi velici che a motore; acquisirai sicurezza nelle manovre,
+          rispetto delle procedure di prevenzione degli abbordi e una condotta consapevole e responsabile in ogni condizione di mare.
         </p>
       </div>
 
       <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
         <div class="card bg-sky-100 shadow-2xl rounded-2xl overflow-hidden group">
           <div class="card-body p-8">
-            <h2 class="card-title text-2xl font-bold text-gray-900">Patente Nautica entro le 12 miglia</h2>
+            <h2 class="card-title text-xl sm:text-2xl font-bold text-gray-900">Patente Nautica entro le 12 miglia</h2>
             <p class="mt-4 text-gray-600">Pensato per chi desidera iniziare a navigare in sicurezza, acquisendo le conoscenze fondamentali per la navigazione da diporto. Teoria e uscite in mare, per mettere in pratica le nozioni apprese.</p>
             <div class="card-actions justify-start mt-6">
                 <button id="openModal12MBtn" class="text-base md:text-l font-semibold py-5 inline-flex items-center justify-center gap-2 text-sky-900 hover:text-sky-600 transition-colors duration-300 group">
@@ -41,7 +97,11 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
 
         <div class="card bg-teal-100 shadow-2xl rounded-2xl overflow-hidden group">
           <div class="card-body p-8">
-            <h2 class="card-title text-2xl font-bold text-gray-900">Patente Nautica senza limiti</h2>
+            <div class="relative group mx-auto mb-8 w-80">
+              <div class="absolute -inset-2 md:-inset-4 bg-sky-100 rounded-2xl opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-500"></div>
+              <img src="/images/compass1.jpg" alt="Bussola" class="relative w-full h-auto rounded-2xl shadow-xl border-4 border-white">
+            </div>    
+            <h2 class="card-title text-xl sm:text-2xl font-bold text-gray-900">Patente Nautica senza limiti</h2>
             <p class="mt-4 text-gray-600">Rivolto a chi sogna di navigare in alto mare, oltrepassando il limite delle 12 miglia.
                  Vengono approfonditi tutti gli aspetti della navigazione d’altura, padroneggiando carteggio e carte nautiche</p>
             <div class="card-actions justify-start mt-6">
