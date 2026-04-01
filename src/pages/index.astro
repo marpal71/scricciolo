@@ -185,7 +185,7 @@ const newImages = [
 				<a href="mailto:scricciolo_2026@virgilio.it" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-lg text-sky-900 bg-white hover:bg-sky-100 transition duration-300 ease-in-out shadow-lg transform hover:-translate-y-1">
 					Scrivici un'email
 				</a>
-				<a href="https://wa.me/+393387252895/" class="inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 transition duration-300 ease-in-out shadow-lg transform hover:-translate-y-1">
+				<a href="https://wa.me/+393387252895/" id="whatsapp" class="inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 transition duration-300 ease-in-out shadow-lg transform hover:-translate-y-1">
 					Scrivici su WhatsApp
 				</a>
 			</div>
@@ -197,4 +197,27 @@ const newImages = [
 <script>
     import { setupImagePreview } from '../scripts/image-preview';
     setupImagePreview();
+
+	import { incrementValue } from "../lib/firestore.js";
+	const waSelected = document.querySelector('#whatsapp');
+  
+	const stepCounter = async (event) => {
+	  // 1. Prevent the default navigation
+	  event.preventDefault(); 
+	  const link = event.currentTarget;
+
+	  try {
+		// 2. Try to update the database
+		await incrementValue("richieste", "contatori", "whatsapp");
+	  } catch (e) { 
+		// 3. If it fails, log the error to the console
+		console.error("Failed to increment counter, but redirecting anyway:", e);
+	  } finally {
+		// 4. IMPORTANT: Redirect the user, regardless of success or failure
+		window.location.href = link.href;
+	  }
+	};
+
+	// Register the event listener
+	waSelected.addEventListener('click', stepCounter);
 </script>
