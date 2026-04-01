@@ -201,23 +201,16 @@ const newImages = [
 	import { incrementValue } from "../lib/firestore.js";
 	const waSelected = document.querySelector('#whatsapp');
   
-	const stepCounter = async (event) => {
-	  // 1. Prevent the default navigation
-	  event.preventDefault(); 
-	  const link = event.currentTarget;
-
-	  try {
-		// 2. Try to update the database
-		await incrementValue("richieste", "contatori", "whatsapp");
-	  } catch (e) { 
-		// 3. If it fails, log the error to the console
-		console.error("Failed to increment counter, but redirecting anyway:", e);
-	  } finally {
-		// 4. IMPORTANT: Redirect the user, regardless of success or failure
-		window.location.href = link.href;
-	  }
+	const stepCounter = () => {
+	  // Chiama la funzione per incrementare il valore ma non bloccare la navigazione.
+	  // L'utente viene reindirizzato immediatamente dal comportamento nativo del link.
+	  incrementValue("richieste", "contatori", "whatsapp")
+		.catch(e => {
+		  // Se c'è un errore, lo registriamo in console senza disturbare l'utente.
+		  console.error("Errore in background nell'incremento del contatore:", e);
+		});
 	};
 
-	// Register the event listener
+	// Registra l'event listener
 	waSelected.addEventListener('click', stepCounter);
 </script>
