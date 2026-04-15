@@ -1,0 +1,36 @@
+---
+import { SEO } from "astro-seo";
+import siteConfig from "../../site.config.mts";
+
+export interface Props {
+	title?: string;
+	description?: string;
+    image?: string;
+    canonical?: string;
+}
+
+const { title, description, image, canonical } = Astro.props;
+const { profileImage } = siteConfig;
+
+const a_title = title ? `${title} | ${siteConfig.title}` : siteConfig.title;
+const a_description = description ?? siteConfig.description;
+const a_image = image ? `${Astro.site.href}${image}` : `${Astro.site.href}${profileImage}`;
+const a_canonical = canonical ? `${Astro.site.href}${canonical}`: Astro.site.href;
+
+---
+<SEO
+    title={a_title}
+    description={a_description}
+    canonical={a_canonical}
+    openGraph={{
+        basic: {
+          title: a_title,
+          type: "website",
+          image: a_image,
+          url: a_canonical
+        },
+        image: {
+            alt: a_title,
+        }
+      }}
+/>

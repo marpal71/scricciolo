@@ -1,4 +1,3 @@
-
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import LandingHero from '../components/LandingHero-2.astro';
@@ -39,9 +38,15 @@ const newImages = [
         alt: "La barca Scricciolo in mare"
     }
 ];
+
+const title = "Tour in barca a Gaeta, Ponza e Ventotene";
+const description = "Esplora le meraviglie del Mar Tirreno con i nostri tour in barca personalizzati. Partenze da Gaeta per Ponza, Ventotene e le isole pontine. Vivi un'esperienza indimenticabile tra grotte segrete, acque cristalline e tramonti mozzafiato.";
 ---
 
-<MainLayout>
+<MainLayout
+	title={title}
+	description={description}
+	>
 	<section class="relative min-h-screen items-center flex py-10 md:py-4 overflow-hidden">
 		<LandingHero />
 		<!-- <FeaturedWorkScroll /> -->
