@@ -22,9 +22,15 @@ const coverMap = new Map<string, ImageMetadata>(
 );
 
 const base = import.meta.env.BASE_URL;
+
+const title = "Itinerari - Scopri le nostre escursioni in barca";
+const description = "Sfoglia la galleria dei nostri itinerari in barca. Scopri le foto di Ponza, Palmarola, Ventotene e della splendida Riviera di Ulisse.";
 ---
 
-<MainLayout>
+<MainLayout
+    title={title}
+    description={description}
+>
 	<section class="py-16 pt-24">
 		<div class="container-custom">
 			<div class="mb-16 text-center">

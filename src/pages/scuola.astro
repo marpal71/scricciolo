@@ -7,9 +7,17 @@ const { Content } = await patenteNautica.render();
 
 const patenteNauticaSL = await getEntry('scuola', 'patente-nautica-sl');
 const { Content: ContentSL } = await patenteNauticaSL.render();
+
+const title = "Scuola Nautica a Gaeta | Patente Nautica Entro 12 Miglia e Senza Limiti";
+const description = "Ottieni la patente nautica a Gaeta con la nostra scuola. Offriamo corsi per patente nautica entro le 12 miglia e senza limiti, con lezioni teoriche e uscite pratiche in mare per diventare un comandante esperto.";
+const image = "/images/compass1.jpg";
 ---
 
-<MainLayout title="Scuola Nautica">
+<MainLayout
+    title={title}
+    description={description}
+    image={image}
+>
   
   ---
   // Astro component section
@@ -20,12 +28,12 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
       
       <!-- Heading -->
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
           Ami il mare e sogni di navigare in sicurezza e padronanza ?
           <p class="text-yellow-300 pt-3">
             DIVENTA COMANDANTE
           </p>
-        </h2>
+        </h1>
         <p class="text-lg md:text-xl text-blue-200">
           Il mare non è solo una destinazione, ma una vocazione. Prendi il timone, senti la forza degli elementi e governa in sicurezza la tua imbarcazione.
         </p>

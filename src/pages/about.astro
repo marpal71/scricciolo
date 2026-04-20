@@ -27,9 +27,16 @@ async function getReviews() {
 }
 
 const reviews = await getReviews();
+
+const title = "Chi siamo - Il tuo comandante per un giorno";
+const description = "Scopri la passione e l'esperienza del nostro equipaggio. Con anni di navigazione nel Mar Tirreno, ti garantiamo un'avventura indimenticabile e in totale sicurezza.";
 ---
 
-<MainLayout>
+<MainLayout
+    title={title}
+    description={description}
+    image={profileImage}
+>
 	<section class="pt-32 pb-20 bg-slate-50">
 		<div class="container mx-auto px-4 md:px-6">
 			<div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
