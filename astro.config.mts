@@ -9,8 +9,7 @@ const basePath = env.BASE;
 
 // https://astro.build/config
 export default defineConfig({
-	site: siteUrl || 'https://scricciolo3.netlify.app/',
-	//site: siteUrl || 'https://scricciolo.wuaze.com/',
+	site: siteUrl || 'https://www.nonsolocharter.it/',
 	base: basePath ?? '/',
 	vite: {
 		plugins: [tailwindcss()],
