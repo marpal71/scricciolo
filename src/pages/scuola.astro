@@ -11,12 +11,14 @@ const { Content: ContentSL } = await patenteNauticaSL.render();
 const title = "Scuola Nautica a Gaeta | Patente Nautica Entro 12 Miglia e Senza Limiti";
 const description = "Ottieni la patente nautica a Gaeta con la nostra scuola. Offriamo corsi per patente nautica entro le 12 miglia e senza limiti, con lezioni teoriche e uscite pratiche in mare per diventare un comandante esperto.";
 const image = "/images/compass1.jpg";
+const canonical = "https://www.nonsolocharter.it/scuola";
 ---
 
 <MainLayout
     title={title}
     description={description}
     image={image}
+    canonical={canonical}
 >
   
   ---
@@ -149,7 +151,7 @@ const image = "/images/compass1.jpg";
             <a href="mailto:scricciolo_2026@virgilio.it" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-xl font-medium rounded-lg text-white bg-sky-800 hover:bg-sky-900 transition duration-300 ease-in-out shadow-lg transform hover:-translate-y-1">
               Scrivici un'email
             </a>
-            <a href="https://wa.me/+393387252895/" class="inline-flex items-center justify-center px-6 py-4 border border-transparent text-xl font-medium rounded-lg text-white bg-green-700 hover:bg-green-800 transition duration-300 ease-in-out shadow-lg transform hover:-translate-y-1">
+            <a href="https://wa.me/+393387252895/" id="whatsapp" class="inline-flex items-center justify-center px-6 py-4 border border-transparent text-xl font-medium rounded-lg text-white bg-green-700 hover:bg-green-800 transition duration-300 ease-in-out shadow-lg transform hover:-translate-y-1">
               Scrivici su WhatsApp
             </a>
           </div>
@@ -257,5 +259,22 @@ const image = "/images/compass1.jpg";
         }
       }
     });
+
+  //Gestione contatore WA
+  import { incrementValue } from "../lib/firestore.js";
+	const waSelected = document.querySelector('#whatsapp');
+  
+	const stepCounter = () => {
+	  // Chiama la funzione per incrementare il valore ma non bloccare la navigazione.
+	  // L'utente viene reindirizzato immediatamente dal comportamento nativo del link.
+	  incrementValue("richieste", "contatori", "whatsapp")
+		.catch(e => {
+		  // Se c'è un errore, lo registriamo in console senza disturbare l'utente.
+		  console.error("Errore in background nell'incremento del contatore:", e);
+		});
+	};
+
+	// Registra l'event listener
+	waSelected.addEventListener('click', stepCounter);
   </script>
   

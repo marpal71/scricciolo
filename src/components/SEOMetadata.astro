@@ -15,7 +15,7 @@ const { profileImage } = siteConfig;
 const a_title = title ? `${title} | ${siteConfig.title}` : siteConfig.title;
 const a_description = description ?? siteConfig.description;
 const a_image = image ? `${Astro.site.href}${image}` : `${Astro.site.href}${profileImage}`;
-const a_canonical = canonical ? `${Astro.site.href}${canonical}`: Astro.site.href;
+const a_canonical = canonical ? new URL(canonical, Astro.site.href).href : Astro.site.href;
 
 ---
 <SEO
